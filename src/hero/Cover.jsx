@@ -5,14 +5,17 @@ import Title from '@/components/Title'
 
 export default function Cover() {
   return (
-    <div className='overflow-hidden'>
+    <div className='relative w-full h-full min-h-screen min-w-full'>
         <Image
         src="/bg.jpg"
         alt="Background"
-        width={1920}
-        height={1080}
         priority={true}
-        className='bg-cover bg-no-repeat bg-center  w-full  z-0'
+        quality={100}
+        layout='fill'
+        objectFit="cover" 
+        objectPosition="left"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className='z-0'
         />
         <Blur />
         <Title />
