@@ -5,9 +5,9 @@ import Image from 'next/image'
 import Title from '@/components/Title/Title'
 import Button from '@/components/Button/Button'
 
-export default function Cover() {
+export default function Cover({className}) {
   return (
-    <div className={cl(styles.cover)}>
+    <div className={cl(className, styles.cover)}>
         <Image
         src="/bg.jpg"
         alt="Background"
@@ -19,9 +19,17 @@ export default function Cover() {
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
         <div className={cl(styles.coverCircleBlur)}></div> 
-        <Title>
+        <div className={cl(className, styles.coverTitle)}>
+        <Title type="large">
         Lösungen für Ihre Sicherheit - Mit Expertise und Erfahrung 
         </Title>
+        <Title>
+        Unser Team aus Fachleuten bringt jahrelange Erfahrung in jeder Situation mit. Für nahezu jede Herausforderung finden wir eine Lösung – diskret, professionell und zuverlässig.
+        </Title>
+        <Button href="/kontakt" btnLabel="Kontaktieren Sie uns" />
+
+        </div>
+        
     </div>
   )
 }

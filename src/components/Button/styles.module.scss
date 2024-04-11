@@ -2,6 +2,7 @@
     background-color: #007bff; 
     color: #f5f5f5; 
     padding: 16px 32px; 
+    font-family: 'Murecho', sans-serif;
     border-radius: 60px; 
     transition: background-color 0.3s ease-in-out; 
     display: inline-block; 
@@ -12,6 +13,6 @@
         background-color: #0056b3; 
     }
     @media screen and (min-width: 1024px) { 
-      font-size: 1.25rem; 
+      font-size: 1.2rem; 
     }
 }

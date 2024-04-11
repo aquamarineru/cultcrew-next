@@ -1,22 +1,7 @@
 .title{
-    position: absolute;
-    top: 20%; 
-    max-width: 300px;
     padding: 0 1.3rem; 
     font-family: 'Murecho', sans-serif;
     color: #f5f5f5; 
-    z-index: 10;
-    text-align: left;
-    padding: 0 1.6rem;
-    @media screen and (min-width: 768px) {
-        right: 10%;
-        top: 33%;
-    }
-    @media screen and (min-width: 1000px) {
-        max-width: 500px;
-        right: 5%;
-        top: 15%;
-    }
     &Large {
         font-size: 2rem; 
         font-weight: bold; 
