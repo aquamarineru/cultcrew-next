@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import styles from './styles.module.scss'
+import cl from 'classnames'
 import Image from 'next/image';
-import Navigation from '../components/Navbar'; 
+import Navigation from './Navbar'; 
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,18 +10,20 @@ export default function Header() {
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className='bg-background sticky top-0 z-10 w-full'>
-      <div className='container mx-auto flex items-center p-4 justify-between relative'>
+    <header className={cl(styles.header)}>
+      <div className={cl(styles.headerContainer)}>
         <Image
           src='/logo.png'
           width={150}
           height={150}
           alt='Logo'
           priority
+          quality={100}
+          className={cl(styles.headerLogo)}
         />
         {/* Hamburger/Close Icon */}
         <div className='lg:hidden z-20'>
-          <button onClick={toggleMenu} className="focus:outline-none">
+          <button onClick={toggleMenu} className={cl(styles.headerButton)}>
             <svg
               className="w-8 h-8"
               fill="none"
@@ -37,7 +41,7 @@ export default function Header() {
         </div>
         {/* Navigation Menu */}
         <div 
-          className={`absolute lg:relative lg:flex flex-col lg:flex-row items-center justify-center transition-transform duration-500 ease-in-out ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0 top-0 left-0 h-screen lg:h-auto w-full lg:w-auto bg-background lg:bg-transparent`}
+          className={cl(styles.headerMenu, isOpen && styles.headerIsOpen)}
         >
           <Navigation />
         </div>

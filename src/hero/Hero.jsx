@@ -1,20 +1,21 @@
 import React from 'react';
-import Image from 'next/image';
+import styles from './styles.module.scss';
+import cl from 'classnames';
+/* import Image from 'next/image';
 import Button from '../components/Button';
 import Blur from '../components/Blur';
 import About from "./About";
 import Services from "./Services";
-import Test from '../components/Test';
+import Test from '../components/Test'; */
 import Cover from './Cover';
 
 export default function Hero() {
   return (
-    <section className='flex flex-col'>
+    <section className={cl(styles.section)}>
         <Cover />
-      <div className='container mx-auto'>
-        {/* <Test />
-        <Services />
-        <About /> */}
+      <div className=''>
+        {/* <Services />
+        <About />  */}
       </div>
       
     </section>

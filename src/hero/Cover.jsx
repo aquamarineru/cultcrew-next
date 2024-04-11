@@ -1,11 +1,13 @@
 import React from 'react'
+import styles from './styles.module.scss'
+import cl from 'classnames'
 import Image from 'next/image'
 import Blur from '../components/Blur'
 import Title from '@/components/Title'
 
 export default function Cover() {
   return (
-    <div className='relative w-full h-full min-h-screen min-w-full'>
+    <div className={cl(styles.cover)}>
         <Image
         src="/bg.jpg"
         alt="Background"
@@ -15,7 +17,6 @@ export default function Cover() {
         objectFit="cover" 
         objectPosition="left"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        className='z-0'
         />
         <Blur />
         <Title />

@@ -34,9 +34,13 @@ const data = [
 
 export default function Services() {
   return (
-    <div className="bg-light-blue px-24 py-10 mx-auto rounded-md">
-        <h2 className="font-bold text-3xl">Werfen Sie einen Blick auf unsere Serviceleistungen</h2>
-        <p className="text-4xl">Lorem ipsum dolor sit amet...</p>
+    <div className="bg-blue-600 px-10 lg:px-24 lg:py-10 mx-auto rounded-md">
+        <div className='bg-dark-blue '>
+            <h2 className="font-bold text-2xl text-center lg:text-3xl">Werfen Sie einen Blick auf unsere Serviceleistungen</h2>
+            <p className="text-4xl text-center ">Lorem ipsum dolor sit amet...</p>
+
+        </div>
+        
         <Slider>
             {data.map((item, index) => (
                 <SwiperSlide key={index}>

@@ -7,12 +7,18 @@ export default function About() {
   return (
     <div className="w-full py-24 flex flex-col items-center justify-center gap-4">
         <div className='flex flex-row items-start justify-between gap-10 w-[1000px] '>
-        <Image 
+            <div className='hidden'>
+            <Image 
         src="/about.png"
         alt="About"
         width={500}
         height={500}
+        className='object-none hidden md:block'
+        
         />
+
+            </div>
+        
         <div className='flex flex-col justify-between items-start gap-4 w-[500px]'>
             <div>Die Wahl von Cult Crew  Sicherheitsdiensten bietet zahlreiche Vorteile, darunter:</div>
             <div className='flex flex-row items-center justify-center gap-2'>
