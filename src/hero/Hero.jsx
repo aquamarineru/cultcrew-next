@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 import cl from 'classnames';
 import Services from "./Services";
+import About from "./About"
 /* import Image from 'next/image';
 import Button from '../components/Button';
 import Blur from '../components/Blur';
@@ -16,7 +17,7 @@ export default function Hero() {
         <Cover />
       <div className=''>
         <Services />
-                {/* <About />  */}
+        <About />  
       </div>
       
     </section>
