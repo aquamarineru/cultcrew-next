@@ -18,6 +18,13 @@ export default function Title({children, type, className}) {
       </h2>
     )
   }
+  if(type ==='small') {
+    return(
+      <h3 className={cl(className, styles.title, styles.titleSmall)}>
+        {children }
+      </h3>
+    )
+  }
   return (
       <p className={cl(className, styles.title, className, styles.titleDescr)}> {children}</p>
 

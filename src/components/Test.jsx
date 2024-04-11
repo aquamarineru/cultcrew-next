@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
-import Slider from './Slider'
-import Cards from './Cards'
+import Slider from './Slider/Slider'
+import Cards from './Slider/Cards'
 import { SwiperSlide } from 'swiper/react';
 const data = [
     {

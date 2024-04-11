@@ -36,3 +36,48 @@
         }
     }
 }
+.services{
+    background-color: #EEF6FF;
+    padding: 1.5em  1em;
+    margin: 2.5em 1em;
+    border-radius: 20px;
+    @media screen and (min-width: 768px) {
+        padding: 2.5em 1.5em;
+        margin-top: 50px;
+        margin: 1.5em 1.5em;
+    }
+    @media screen and (min-width: 1000px) {
+        padding: 3em 2em;
+        margin: 2em 2em;
+    }
+    
+    &Title{
+        color: #333;
+        font-family: 'Murecho', sans-serif;
+        text-align: center;
+        font-size: 1rem;
+        font-weight: 600;
+
+        @media screen and (min-width: 768px) {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+    }
+    &Descr{
+        color: #333;
+        text-align: center;
+        margin-top: 20px;
+        font-size: .8rem;
+        font-family: 'Murecho', sans-serif;
+        @media screen and (min-width: 768px) {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+    }
+    &Btn{
+        display: flex;
+        justify-content: center;
+       //margin-top: 1rem;
+    }
+
+}

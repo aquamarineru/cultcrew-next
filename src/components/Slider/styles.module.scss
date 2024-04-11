@@ -1,0 +1,42 @@
+.slider{
+    margin-top: 3em;
+    margin-bottom: 3em;
+    padding: 0 1.3rem;
+    
+    
+}
+.card{
+    background-color: #00527D;
+    border-radius: 15px;
+    padding: 1.5em 2em;
+    max-width: 250px;
+    margin: 0 auto 3em auto;
+    cursor: pointer;
+    &:hover{
+        background-color: #002347;
+    }
+    
+    &Icon{
+        width: 100px;
+        height: 100px;
+    }
+    &Title{
+        color: #f5f4f3;
+        font-family: "Murecho", sans-serif;
+        font-size: 1rem;
+        margin-top: 1em;
+        font-weight: 500;
+        @media screen and (min-width: 768px) {
+            font-size: 2rem;
+            
+        }
+    }
+    &Description{
+        color: #f5f4f3;
+        font-size: .8rem;
+        margin-top: 1em;
+        font-family: "Murecho", sans-serif;
+        line-height: 1.2;
+        font-weight: 300;
+    }
+}

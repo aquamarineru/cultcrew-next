@@ -4,24 +4,24 @@ import 'swiper/css';
 import 'swiper/css/navigation'; 
 import 'swiper/css/pagination'; 
 import { Pagination } from 'swiper/modules';
+import styles from './styles.module.scss'
+import cl from 'classnames'
 
-export default function Slider({children}) {
+export default function Slider({children, className}) {
   return (
    <Swiper 
-   className='mySwiper'
+   className={cl(className, styles.slider)}
       modules={[Pagination]}
       spaceBetween={50}
       pagination={{ 
         clickable: true,
-        
-
       }}
       breakpoints={{
-        320: {
+        350: {
           slidesPerView: 1,
           spaceBetween: 20,
         },
-        768: {
+        760: {
           slidesPerView: 2,
           spaceBetween: 20,
         },
