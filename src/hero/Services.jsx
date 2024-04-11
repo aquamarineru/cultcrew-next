@@ -38,7 +38,7 @@ const data = [
 export default function Services({className}) {
   return (
     <div className={cl(className, styles.services)}>
-            <h2  className={cl(className, styles.servicesTitle)}>Werfen Sie einen Blick auf unsere Serviceleistungen</h2>
+            <Title type="medium">Werfen Sie einen Blick auf unsere Serviceleistungen</Title>
             <h3
             className={cl(className, styles.servicesDescr)} 
             >

@@ -10,6 +10,7 @@ import About from "./About";
 
 import Test from '../components/Test'; */
 import Cover from './Cover';
+import Feedback from './Feedback';
 
 export default function Hero() {
   return (
@@ -18,7 +19,14 @@ export default function Hero() {
       <div className=''>
         <Services />
         <About />  
+        <Feedback />
       </div>
+      <section className="">
+                Das Kunden sagen
+            </section>
+            <section className="">
+                Aktuelle News
+            </section>
       
     </section>
   );

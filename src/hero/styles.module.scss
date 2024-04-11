@@ -168,3 +168,11 @@
         }
     }
 }
+.feedback {
+    position: relative;
+    &QuoteDown{
+        position: absolute;
+        right: 1em;
+        bottom: 1em;
+    }
+}
