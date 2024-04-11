@@ -2,8 +2,8 @@ import React from 'react'
 import styles from './styles.module.scss'
 import cl from 'classnames'
 import Image from 'next/image'
-import Blur from '../components/Blur'
-import Title from '@/components/Title'
+import Title from '@/components/Title/Title'
+import Button from '@/components/Button/Button'
 
 export default function Cover() {
   return (
@@ -18,8 +18,10 @@ export default function Cover() {
         objectPosition="left"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        <Blur />
-        <Title />
+        <div className={cl(styles.coverCircleBlur)}></div> 
+        <Title>
+        Lösungen für Ihre Sicherheit - Mit Expertise und Erfahrung 
+        </Title>
     </div>
   )
 }

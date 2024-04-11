@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { GoCheck } from "react-icons/go";
-import Button from '../components/Button';
+import Button from '../components/Button/Button';
 
 export default function About() {
   return (

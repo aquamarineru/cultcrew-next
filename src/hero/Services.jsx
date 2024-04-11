@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Slider from '../components/Slider'
 import Cards from '../components/Cards'
-import Button from '../components/Button'
+import Button from '../components/Button/Button'
 import { SwiperSlide } from 'swiper/react';
 const data = [
     {

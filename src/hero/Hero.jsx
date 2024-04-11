@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import cl from 'classnames';
+import Services from "./Services";
 /* import Image from 'next/image';
 import Button from '../components/Button';
 import Blur from '../components/Blur';
 import About from "./About";
-import Services from "./Services";
+
 import Test from '../components/Test'; */
 import Cover from './Cover';
 
@@ -14,8 +15,8 @@ export default function Hero() {
     <section className={cl(styles.section)}>
         <Cover />
       <div className=''>
-        {/* <Services />
-        <About />  */}
+        <Services />
+                {/* <About />  */}
       </div>
       
     </section>
