@@ -43,7 +43,7 @@
 .feedbackCard{
     position: relative;
     margin-bottom: 2em;
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 700px) {
         margin-bottom: 3em;
         
     }
@@ -56,7 +56,8 @@
 
     &Text{
         position: absolute;
-        top: 10%;
+        max-width: 250px;
+        top: 12%;
         left: 10%;
         transform: translateX(-10%);
         padding: 1em 2em;
@@ -65,8 +66,20 @@
         margin-top: 1em;
         line-height: 1.2;
         font-weight: 300;
-        @media screen and (min-width: 1000px) {
-            padding: 1.5em 2.5em;
+        @media screen and (min-width: 400px) {
+            padding: 1.5em 2em;
+            max-width: 300px;
+            
+        }
+        @media screen and (min-width: 700px) {
+            left: 10%;
+            transform: translateX(-10%);
+       }
+        @media screen and (min-width: 1400px) {
+            padding: 1em 2.5em;
+            max-width: 300px;
+            font-size: 1em;
+
         }
     }
     &Name {

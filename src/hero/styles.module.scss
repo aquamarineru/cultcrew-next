@@ -138,3 +138,27 @@
         bottom: 1em;
     }
 }
+.news{
+    margin: 2.5em 1em;
+    @media screen and (min-width: 768px) {
+        margin: 2.5em 2em;
+
+    }
+    @media screen and (min-width: 1000px) {
+        margin: 4em 6em;
+        
+    }
+    &Text {
+        color: #333;
+        text-align: center;
+        margin-top: 1em;
+        font-family: "Murecho", sans-serif; 
+        font-size: 1rem;
+        @media screen and (min-width: 768px) {
+            font-size: 1.2rem;
+        }
+        @media screen and (min-width: 1000px) {
+            font-size: 1.5rem;
+        }
+    }
+}

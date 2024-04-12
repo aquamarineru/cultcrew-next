@@ -15,8 +15,9 @@ export default function Cover({className, image, title, text,  btnLabel, href, a
         quality={100}
         layout='fill'
         objectFit="cover"
-        objectPosition="left"
+/*         objectPosition="left" */
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        className={cl(styles.coverImage)}
         />
         <div className={cl(styles.coverCircleBlur)}></div>
         <div className={cl(className, styles.coverTitle)}>

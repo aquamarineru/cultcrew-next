@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/image'
 import styles from './styles.module.scss'
 import cl from 'classnames'
-import Title from '@/components/Title/Title'
 
 export default function Cards({image, title, description, className}) {
   return (

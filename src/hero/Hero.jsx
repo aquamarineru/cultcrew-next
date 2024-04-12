@@ -12,6 +12,7 @@ import Test from '../components/Test'; */
 import Cover from '../components/Cover/Cover';
 import Feedback from './Feedback';
 import CallToAction from '../components/CTA/CallToAction';
+import News from './News';
 
 const coverData = {
   image: '/bg.jpg',
@@ -43,6 +44,7 @@ export default function Hero() {
         <Services />
         <About />  
         <Feedback />
+        <News />
         <CallToAction
         title={ctaData.title}
         subtitle={ctaData.subtitle}
