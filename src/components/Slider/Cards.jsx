@@ -13,8 +13,8 @@ export default function Cards({image, title, description, className}) {
         height={150} 
         alt={title}
         className={cl(className, styles.cardIcon)} />
-    <h3 className={cl(className, styles.cardTitle)}>{title}</h3>
-    <p className={cl(className, styles.cardDescription)}>{description}</p>
+        <h3 className={cl(className, styles.cardTitle)}>{title}</h3>
+        <p className={cl(className, styles.cardDescription)}>{description}</p>
   </div>
   )
 }
