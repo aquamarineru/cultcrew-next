@@ -11,12 +11,9 @@ export default function Cover({className, image, title, text,  btnLabel, href, a
         <Image
         src={image}
         alt="Background"
-        width={1920}
-        height={1080}
+        layout="fill"
         priority={true}
-        quality={100}
-/*         objectFit="cover" */
-/*         objectPosition="left" */
+        quality={80}
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         className={cl(styles.coverImage)}
         />

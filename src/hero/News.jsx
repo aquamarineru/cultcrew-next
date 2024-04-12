@@ -10,19 +10,19 @@ const newsData = [
         image: '/image1.webp',
         title: 'Neue Sicherheitsstandards',
         text: 'Wir setzen neue Maßstäbe in der Sicherheitstechnik und bieten Ihnen innovative Lösungen für Ihre Sicherheit.',
-        link: '/news1'
+        link: '/news/news1'
     },
     {
         image: '/image2.webp',
         title: 'Sicherheits',
         text: 'Wir setzen neue Maßstäbe in der Sicherheitstechnik und bieten Ihnen innovative Lösungen für Ihre Sicherheit.',
-        link: '/news2'
+        link: '/news/news2'
     },
     {
         image: '/image3.webp',
         title: 'Neue Sicherheitsstandards',
         text: 'Wir setzen neue Maßstäbe in der Sicherheitstechnik und bieten Ihnen innovative Lösungen für Ihre Sicherheit.',
-        link: '/news3'
+        link: '/news/news3'
     }
 ]
 
