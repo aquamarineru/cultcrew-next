@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './styles.module.scss'
 import cl from 'classnames'
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import Navigation from './Navbar'; 
 
 export default function Header() {
@@ -14,11 +14,11 @@ export default function Header() {
       <div className={cl(styles.headerContainer)}>
         <Image
           src='/logo.png'
-          width={150}
-          height={150}
+          width={140}
+          height={70}
           alt='Logo'
           priority
-          quality={100}
+          quality={80}
           className={cl(styles.headerLogo)}
         />
         {/* Hamburger/Close Icon */}

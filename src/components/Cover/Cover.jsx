@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import cl from 'classnames'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Title from '@/components/Title/Title'
 import Button from '@/components/Button/Button'
 

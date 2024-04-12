@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './styles.module.scss'
 import cl from 'classnames'
 import Title from '@/components/Title/Title'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Slider from '@/components/Slider/Slider'
 import { SwiperSlide } from 'swiper/react';
 import FeedbackCard from '@/components/Slider/FeedbackCard';
@@ -59,7 +59,7 @@ export default function Feedback({className}) {
         alt="Quote"
         width={50}
         height={50}
-        className={cl(className, styles.feedbackQuoteDown)}
+        className={cl(className, styles.feedback, styles.feedbackQuoteDown)}
         />
             
       

@@ -5,11 +5,12 @@ import Header from "@/components/Header/Header";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <div 
+    id="__next">
       <Header />
       <Component {...pageProps} />
       <Footer />
-    </>
+    </div>
   );
 }
 

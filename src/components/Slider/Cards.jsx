@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import styles from './styles.module.scss'
 import cl from 'classnames'
 
@@ -8,8 +8,8 @@ export default function Cards({image, title, description, className}) {
     <div className={cl(className, styles.card)}>
         <Image 
         src={image} 
-        width={150} 
-        height={150} 
+        width={120} 
+        height={100} 
         alt={title}
         className={cl(className, styles.cardIcon)} />
         <h3 className={cl(className, styles.cardTitle)}>{title}</h3>

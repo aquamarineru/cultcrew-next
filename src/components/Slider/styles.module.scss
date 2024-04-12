@@ -49,37 +49,43 @@
     }
     &Image{
         max-width: 100%;
-        border-radius: 15px;
         display: block;
         margin: 0 auto;
     }
 
     &Text{
         position: absolute;
-        max-width: 250px;
-        top: 12%;
-        left: 10%;
-        transform: translateX(-10%);
-        padding: 1em 2em;
+        top: 0;
+        left: 0;
+        transform: translateX(0);
+        padding: 1.5em 2em;
         font-family: "Murecho", sans-serif;
         font-size: .8rem;
         margin-top: 1em;
         line-height: 1.2;
         font-weight: 300;
         @media screen and (min-width: 400px) {
-            padding: 1.5em 2em;
-            max-width: 300px;
+            padding: 2.5em 2em;
+            font-size: 1em;
             
         }
         @media screen and (min-width: 700px) {
-            left: 10%;
-            transform: translateX(-10%);
-       }
-        @media screen and (min-width: 1400px) {
-            padding: 1em 2.5em;
-            max-width: 300px;
-            font-size: 1em;
+            padding: 1.5em 2em;
 
+       }
+        @media screen and (min-width: 1024px) {
+            padding: 1em 2em;
+            font-size: .9em;
+            line-height: 1.1;
+            
+        }
+        @media screen and (min-width: 1400px) {
+            padding: 2.5em 2.5em;
+            font-size: 1.2em;
+        }
+        @media  screen and (min-width: 1600px) {
+            padding: 3em 3em;
+            
         }
     }
     &Name {

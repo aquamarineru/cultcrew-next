@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import cl from 'classnames'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Link from 'next/link'
 
 export default function Card({className, image, title, text, link}) {
@@ -11,7 +11,7 @@ export default function Card({className, image, title, text, link}) {
       href={link}>
         <Image
           src={image} 
-          width={150} 
+          width={250} 
           height={150} 
           alt={title}
           className={styles.cardImage}

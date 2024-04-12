@@ -21,11 +21,11 @@ export default function Slider({children, className}) {
           slidesPerView: 1,
           spaceBetween: 20,
         },
-        760: {
+        700: {
           slidesPerView: 2,
           spaceBetween: 20,
         },
-        1024: {
+        1000: {
           slidesPerView: 3,
           spaceBetween: 50,
         },

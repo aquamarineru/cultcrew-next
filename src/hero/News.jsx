@@ -43,6 +43,11 @@ export default function News({className}) {
                 />
             ))}
         </div>
+        <Button 
+            href="/news" 
+            btnLabel="Alle News anzeigen"
+            ariaLabel={News}
+            />
       
     </div>
   )

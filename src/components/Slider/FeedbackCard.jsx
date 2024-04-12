@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import cl from 'classnames'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 
 export default function FeedbackCard({className, name, text}) {
   return (
@@ -9,8 +9,8 @@ export default function FeedbackCard({className, name, text}) {
         <Image 
         src="/BG.svg"
         alt="Background"
-        width={400}
-        height={200}
+        width={550}
+        height={400}
         className={cl(styles.feedbackCardImage)}
         />
         <p className={cl(className, styles.feedbackCardText)}>{text}</p>

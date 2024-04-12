@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import Slider from '../components/Slider/Slider'
 import Cards from '../components/Slider/Cards'
 import Button from '../components/Button/Button'

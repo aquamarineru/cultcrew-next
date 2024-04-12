@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from "next/legacy/image"
 import { GoCheck } from "react-icons/go";
 import Button from '../components/Button/Button';
 import styles from './styles.module.scss'
