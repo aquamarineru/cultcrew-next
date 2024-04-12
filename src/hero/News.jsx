@@ -3,22 +3,23 @@ import styles from './styles.module.scss'
 import cl from 'classnames'
 import Title from '@/components/Title/Title'
 import Button from '@/components/Button/Button'
+import Card from '@/components/Card/Card'
 
 const newsData = [
     {
-        image: '/news1.jpg',
+        image: '/image1.webp',
         title: 'Neue Sicherheitsstandards',
         text: 'Wir setzen neue Maßstäbe in der Sicherheitstechnik und bieten Ihnen innovative Lösungen für Ihre Sicherheit.',
         link: '/news1'
     },
     {
-        image: '/news2.jpg',
+        image: '/image2.webp',
         title: 'Sicherheits',
         text: 'Wir setzen neue Maßstäbe in der Sicherheitstechnik und bieten Ihnen innovative Lösungen für Ihre Sicherheit.',
         link: '/news2'
     },
     {
-        image: '/news3.jpg',
+        image: '/image3.webp',
         title: 'Neue Sicherheitsstandards',
         text: 'Wir setzen neue Maßstäbe in der Sicherheitstechnik und bieten Ihnen innovative Lösungen für Ihre Sicherheit.',
         link: '/news3'
@@ -30,6 +31,18 @@ export default function News({className}) {
     <div className={cl(className, styles.news)}>
         <Title type="medium">Aktuelle News</Title>
         <p className={cl(className, styles.news, styles.newsText)}>Bleiben Sie auf dem Laufenden</p>
+        <div className={cl(className, styles.newsCard)}>
+            {newsData.map((news, index) => (
+                <Card
+                    key={index}
+                    className={styles.newsCard}
+                    image={news.image}
+                    title={news.title}
+                    text={news.text}
+                    link={news.link}
+                />
+            ))}
+        </div>
       
     </div>
   )

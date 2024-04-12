@@ -1,0 +1,29 @@
+.card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  border-radius: 15px;
+  &:hover {
+    background-color: #EEF6FF;
+  }
+  &Content {
+    font-family: "Murecho", sans-serif;
+    color: #333;
+    text-decoration: none;
+    max-width: 300px;
+  }
+  &Title {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 1em 0;
+  }
+  &Image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+}
