@@ -21,9 +21,6 @@ export default function Hero() {
         <About />  
         <Feedback />
       </div>
-      <section className="">
-                Das Kunden sagen
-            </section>
             <section className="">
                 Aktuelle News
             </section>

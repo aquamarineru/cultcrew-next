@@ -65,8 +65,8 @@
         margin-top: 1em;
         line-height: 1.2;
         font-weight: 300;
-        @media screen and (min-width: 768px) {
-            font-size: .8rem;
+        @media screen and (min-width: 1000px) {
+            padding: 1.5em 2.5em;
         }
     }
     &Name {
@@ -74,10 +74,25 @@
         top: 70%;
         left: 0;
         transform: translateX(-10%);
-        padding: 1em 2em;
+        padding: 1.5em 2em;
         font-family: "Murecho", sans-serif;
-        font-size: 1rem;
+        font-size: .8rem;
         margin-top: 1em;
         font-weight: 500;
+        @media screen and (min-width: 400px) {
+            padding: 2.5em 2em;
+            
+        }
+        @media screen and (min-width: 700px) {
+            padding: 1.5em 2em;
+        }
+        @media screen and (min-width: 1000px) {
+            font-size: 1em;  
+        }
+        @media screen and (min-width: 1200px) {
+            padding: 2em 2.5em;
+            font-size: 1.2em;  
+            
+        }
     }
 }
