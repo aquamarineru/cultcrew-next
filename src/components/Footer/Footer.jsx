@@ -20,65 +20,58 @@ export default function Footer({className}) {
           quality={80}
           />
           <div className={cl(className, styles.footerContact)}>
-            <p>2728 Hickory StreetSalt 
+            <p className={cl(className, styles.footerContactItem)}>2728 Hickory StreetSalt 
               <br />  Lake City, UT 84104</p>
-            <p>
+            <p className={cl(className, styles.footerContactItem)}>
               <FaPhoneAlt />
               <a href="tel:+1801-328-8778">801-328-8778</a>
             </p>
-            <p>
+            <p className={cl(className, styles.footerContactItem)}>
               <FaEnvelope />
               <a href="mailto:info@test.com"> info@test.com </a>
             </p>
           </div>
         </div>
         <div className={styles.footerLinks}>
-          <h4>Quick Links</h4>
           <ul>
-          <li>
+          <li className={styles.footerLinksItem}>
               <Link href="/">Startseite</Link>
             </li>
-            <li>
+            <li className={styles.footerLinksItem}>
               <Link href="/services">Services</Link>
             </li>
-            <li>
+            <li className={styles.footerLinksItem}>
               <Link href="/unternehmen">Unternehmen</Link>
             </li>
-            <li>
+            <li className={styles.footerLinksItem}>
               <Link href="/news">News</Link>
             </li>
-            <li>
+            <li className={styles.footerLinksItem}>
               <Link href="/jobs">Karierre</Link>
             </li>
-            <li>
+            <li className={styles.footerLinksItem}>
               <Link href="/kontakt">Kontakt</Link>
             </li>
           </ul>
-
-        </div>
-        <div>
           <ul>
-            <li>
+            <li className={styles.footerLinksItem}>
               <Link href="/services">Impressum</Link>
             </li>
-            <li>
+            <li className={styles.footerLinksItem}>
               <Link href="/services">Datenschutz</Link>
             </li>
-            <li>
+            <li className={styles.footerLinksItem}>
               <Link href="/services">AGB</Link>
             </li>
           </ul>
-        </div>
-        <div>
-        <h4>Social Media:</h4>
           <ul>
-            <li>
+            <li className={styles.footerLinksItem}>
               <Link href="/">Facebook</Link>
             </li>
-            <li>
+            <li className={styles.footerLinksItem}>
               <Link href="/">Instagram</Link>
             </li>
-            <li>
+            <li className={styles.footerLinksItem}>
               <Link href="/">LinkedIn</Link>
             </li>
           </ul>
