@@ -11,6 +11,7 @@ import About from "./About";
 import Test from '../components/Test'; */
 import Cover from './Cover';
 import Feedback from './Feedback';
+import CallToAction from './CallToAction';
 
 export default function Hero() {
   return (
@@ -20,6 +21,7 @@ export default function Hero() {
         <Services />
         <About />  
         <Feedback />
+        <CallToAction />
       </div>
             <section className="">
                 Aktuelle News
