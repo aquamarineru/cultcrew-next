@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import styles from './styles.module.scss'
 import cl from 'classnames'
 import Image from "next/legacy/image";
+import Link from 'next/link';
+
 import Navigation from './Navbar'; 
 
 export default function Header() {
@@ -12,6 +14,7 @@ export default function Header() {
   return (
     <header className={cl(styles.header)}>
       <div className={cl(styles.headerContainer)}>
+      <Link href='/'>
         <Image
           src='/logo.png'
           width={140}
@@ -21,6 +24,7 @@ export default function Header() {
           quality={80}
           className={cl(styles.headerLogo)}
         />
+      </Link>
         {/* Hamburger/Close Icon */}
         <div className='lg:hidden z-20'>
           <button onClick={toggleMenu} className={cl(styles.headerButton)}>

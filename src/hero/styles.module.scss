@@ -17,29 +17,28 @@
         color: #333;
         font-family: 'Murecho', sans-serif;
         text-align: center;
-        font-size: 1rem;
-        font-weight: 600;
+        font-size: 1em;
+        font-weight: 700;
 
         @media screen and (min-width: 768px) {
-            font-size: 1.5rem;
-            font-weight: 600;
+            font-size: 1.5em;
+            font-weight: 700;
         }
     }
     &Descr{
         color: #333;
         text-align: center;
         margin-top: 20px;
-        font-size: .8rem;
+        font-size: .8em;
         font-family: 'Murecho', sans-serif;
         @media screen and (min-width: 768px) {
-            font-size: 1rem;
+            font-size: 1em;
             font-weight: 400;
         }
     }
     &Btn{
         display: flex;
         justify-content: center;
-       //margin-top: 1rem;
     }
 
 }
@@ -59,6 +58,7 @@
     }
     &Content{
         margin-bottom: 2em;
+        padding: 1.5em 1em;
         @media screen and (min-width: 768px) {
         }
         @media screen and (min-width: 1000px) {
@@ -70,17 +70,19 @@
             margin-bottom: 2em;
         }
     }
-    &Image{
+    
+    &Img{
         display: none;
-
         @media screen and (min-width: 768px) {
-
-        }
-        @media screen and (min-width: 1000px) {
             display: block;
             width: 100%;
+            margin-bottom: 1em;
             max-width: 500px;
             height: 100%;
+        }
+        @media screen and (min-width: 1000px) {
+            max-width: 500px;
+            
         }
     }
     &Text {
@@ -89,51 +91,49 @@
         font-size: .8rem;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: start;
-        gap: 1em;
+        gap: em;
         padding: 1em;
         
         @media screen and (min-width: 768px) {
             max-width: 500px;
+            font-size: 1em;
         }
         @media screen and (min-width: 1000px) {
             
             max-width: 500px;
         }
         &Check{
+            position : relative;
             display: flex;
-            gap: 1em;
-            align-items: start;
-            justify-content: start;
+            gap: .5em;
+            align-items: center;
+            &::before{
+                content: "";
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                top: 1.2em;
+                border-radius: 50%;
+                background-color: #00527D;
+                left: -.5em;
+            }
             @media screen and (min-width: 768px) {
-                gap: 2em;
-                align-items: center;
-                font-size: 1.2em;
+                align-items: start;
             }
             @media screen and (min-width: 1000px) {
-                gap: 2em;
-                line-height: 1.2;
-                font-size: 1.5em;
             }
-        }
-    }
-    &Title{
-        font-family: "Murecho", sans-serif;
-        font-size: 1rem;
-        font-weight: 600;
-        color: #333;
-        @media screen and (min-width: 768px) {
-            font-size: 1.2rem;
-        }
-        @media screen and (min-width: 1000px) {
-            font-size: 1.5rem;
         }
     }
 }
 .feedback {
     position: relative;
-    &QuoteDown{
+    &Subtitle{
+        margin-top: 1em;
+        text-align: center;
+    }
+    &QuoteDown {
         position: absolute;
         right: 1em;
         bottom: 1em;

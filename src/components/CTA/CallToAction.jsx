@@ -4,7 +4,8 @@ import cl from 'classnames'
 import Title from '@/components/Title/Title'
 import Button from '@/components/Button/Button'
 
-export default function CallToAction({className, title, subtitle, btnLabel, href, ariaLabel}) {
+export default function CallToAction({className, title, subtitle, btnLabel,  ariaLabel, href}) {
+  console.log('CallToAction', title, subtitle, btnLabel, ariaLabel, href)
   return (
     <div className={cl(className, styles.cta)}>
         <Title type='medium' className={cl(className, styles.ctaTitle)}>{title}</Title>

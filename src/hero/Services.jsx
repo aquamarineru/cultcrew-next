@@ -1,13 +1,46 @@
-import React from 'react'
-import Image from "next/legacy/image"
+import React from 'react';
+import styles from './styles.module.scss'
+import cl from 'classnames'
+import { SwiperSlide } from 'swiper/react';
+
+import Title from '@/components/Title/Title'
 import Slider from '../components/Slider/Slider'
 import Cards from '../components/Slider/Cards'
 import Button from '../components/Button/Button'
-import { SwiperSlide } from 'swiper/react';
-import styles from './styles.module.scss'
-import cl from 'classnames'
-import Title from '@/components/Title/Title'
-const data = [
+
+const Services = ({ className, title, subtitle, cards }) => {
+  return (
+    <div className={cl(className, styles.services)}>
+        <Title type="medium">{title}</Title>
+        <h3 className={cl(className, styles.servicesDescr)}>
+                {subtitle}
+        </h3>  
+        <Slider>
+            {cards.map((item, index) => (
+                <SwiperSlide key={index}>
+                    <Cards 
+                    image={item.Image.asset.url} 
+                    title={item.title} 
+                    description={item.subtitle} />
+                </SwiperSlide>
+            ))}
+        </Slider>
+        <div className={cl(className, styles.servicesBtn)}>
+            <Button 
+            href="/services" 
+            btnLabel="Unsere Services"
+            ariaLabel="Unsere Services anzeigen"
+            />
+        </div>
+        
+      
+    </div>
+  )
+}
+export default Services
+
+
+/**const data = [
     {
         image: "/service1.svg",
         title: "Private Investigation Services",
@@ -33,36 +66,4 @@ const data = [
         title: "Private Investigation Services",
         description: "This is the fiftWe can help you find legal and efficient solutions to your problems using expert private investigatorh image",
     } 
-  ]
-
-export default function Services({className}) {
-  return (
-    <div className={cl(className, styles.services)}>
-            <Title type="medium">Werfen Sie einen Blick auf unsere Serviceleistungen</Title>
-            <h3
-            className={cl(className, styles.servicesDescr)} 
-            >
-                Lorem ipsum dolor sit amet...
-            </h3>
-        
-        <Slider>
-            {data.map((item, index) => (
-                <SwiperSlide key={index}>
-                    <Cards 
-                    image={item.image} 
-                    title={item.title} description={item.description} />
-                </SwiperSlide>
-            ))}
-        </Slider>
-        <div className={cl(className, styles.servicesBtn)}>
-            <Button 
-            href="/services" 
-            btnLabel="Unsere Services"
-            ariaLabel={Services}
-            />
-        </div>
-        
-      
-    </div>
-  )
-}
+  ] */

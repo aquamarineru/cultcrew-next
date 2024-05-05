@@ -6,35 +6,11 @@ import Image from "next/legacy/image"
 import Slider from '@/components/Slider/Slider'
 import { SwiperSlide } from 'swiper/react';
 import FeedbackCard from '@/components/Slider/FeedbackCard';
+import BlockContent from '@sanity/block-content-to-react'
+import classNames from 'classnames'
 
-const data = [
-    {
-        name: "John Doe",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl in turpis vehicula pharetra. Done  in turpis vehicula pharetra. Done"
-    },
-    {
-        name: "Jane Doe",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl in turpis vehicula pharetra. Done"
-    },
-    {
-        name: "John Doe",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl in turpis vehicula pharetra. Done"
-    },
-    {
-        name: "Jane Doe",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl in turpis vehicula pharetra. Done"
-    },
-    {
-        name: "John Doe",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl in turpis vehicula pharetra. Done"
-    },
-    {
-        name: "Jane Doe",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget nisl in turpis vehicula pharetra. Done"
-    }
-]
 
-export default function Feedback({className}) {
+export default function Feedback({className, title, subtitle, cards}) {
   return (
     <div className={cl(className, styles.services, styles.feedback)}>
         <Image
@@ -44,22 +20,23 @@ export default function Feedback({className}) {
         height={50}
         className={cl(styles.feedbackQuote)}
         />
-        <Title type="medium">Das sagen unsere Kunden</Title>
+        <Title type="medium">{title}</Title>
+        <p className={cl(className, styles.feedbackSubtitle)}>{subtitle} </p>
         <Slider>
-            {data.map((item, index) => (
+            {cards.map((item, index) => (
                 <SwiperSlide key={index}>
                     <FeedbackCard 
                     name={item.name} 
                     text={item.text} />
                 </SwiperSlide>
-            ))}
+            ))} 
         </Slider>
         <Image
         src="/quote-down.svg"
         alt="Quote"
         width={50}
         height={50}
-        className={cl(className, styles.feedback, styles.feedbackQuoteDown)}
+        className={cl(className, styles.feedbackQuoteDown)}
         />
             
       
