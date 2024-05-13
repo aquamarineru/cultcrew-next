@@ -43,7 +43,7 @@ export default function Cover({className, image, title, subtitle,  btnLabel, hre
              className={cl(className, styles.coverText)} 
              serializers={serializers}
              />
-             {
+            {
               btnLabel && href && ariaLabel &&
               <Button 
               href={href}

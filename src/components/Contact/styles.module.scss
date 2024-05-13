@@ -1,0 +1,160 @@
+.contact {
+    padding: 1.5em  1em;
+    margin: 2.5em 1em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: 768px) {
+        
+        flex-direction: row;
+    }
+    @media screen and (min-width: 1000px) {
+  
+    }
+    &Left{
+        flex: 1; 
+        background-color: #002347;  
+        color: white;
+        padding: 2em; 
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        border-top-left-radius: 15px; 
+        border-bottom-left-radius: 15px; 
+    }
+    &Title {
+        color: #fff;
+        text-align: left;
+    }
+    &Text {
+        font-size: 1em;
+        text-align: left;
+        color: #fff;
+        margin: 0.5em 0;
+        padding: 1em;
+    }
+    &Form {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        margin: 1em 0;
+        &Fields{
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-rows: auto auto auto;
+            gap: 1em;
+            width: 100%;
+            & > div {
+                &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+                    grid-column: span 1;
+                }
+        
+                &:nth-child(5) {
+                    grid-column: span 2;
+                }
+            }
+            &Wrapper{
+                display: flex;
+                flex-direction: column;
+            }
+            &Input {
+                padding: 1em;
+                border-radius: 5px;
+                border: 1px solid #002347;
+                margin: 0.5em 0;
+                background-color: #F4F4F4;
+                &::placeholder { 
+                    color: #999;
+                    font-style: italic;
+                    opacity: 1; 
+                  }
+                /* Firefox 19+ */
+                input:-moz-placeholder {
+                    color: #888;
+                    opacity: 1;
+                }
+                
+                /* Firefox 18- */
+                input::-moz-placeholder {
+                    color: #888;
+                    opacity: 1;
+                }
+                
+                /* Internet Explorer 10-11 */
+                input:-ms-input-placeholder {
+                    color: #888;
+                }
+                
+                /* Microsoft Edge */
+                input::-ms-input-placeholder {
+                    color: #888;
+                }
+                
+                /* Standard syntax for most modern browsers */
+                input::placeholder {
+                    color: #888;
+                    font-style: italic;
+                    font-weight: bold;
+                }
+                            
+            }
+        }
+        &Agree {
+            margin: 1em 0;
+            &Link {
+                color: #fff;
+                text-decoration: underline;
+                &:hover {
+                    color: #0061E0;
+                    transform : scale(0.5);
+                }
+            }
+        }
+    }
+    &Right{
+        flex: 1; 
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2em;
+        background-color: #EEF6FF;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px; 
+        &Image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+        &Logo{
+            margin: 0.5em 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        &Data{
+            display: flex;
+            flex-direction: column;
+            align-items:flex-start;
+            gap: 1em;
+            &Text{
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 0.5em;
+                &Icon {
+                    color: #002347;
+                    font-size: 1.5em;
+                    &:hover {
+                        color: #0061E0;
+
+
+                    }
+                }
+            }
+        }
+    }
+    
+}
