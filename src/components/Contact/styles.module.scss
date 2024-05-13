@@ -1,38 +1,70 @@
 .contact {
-    padding: 1.5em  1em;
-    margin: 2.5em 1em;
-    border-radius: 20px;
+    padding: 1em;
+    margin: 2em 0.5em;
     display: flex;
     flex-direction: column;
+    border-radius: 20px;
     @media screen and (min-width: 768px) {
         
         flex-direction: row;
+        padding: 1.5em 1em;  
+        margin: 2.5em 1em; 
     }
     @media screen and (min-width: 1000px) {
+        padding: 2em 1em;
+        margin: 4em 2em;
   
     }
     &Left{
         flex: 1; 
         background-color: #002347;  
         color: white;
-        padding: 2em; 
+        padding: 1em; 
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        border-top-left-radius: 15px; 
-        border-bottom-left-radius: 15px; 
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 0;
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 0; 
+        
+        @media screen and (min-width: 768px) {
+            padding: 1.5em;  
+            border-top-left-radius: 15px; 
+            border-bottom-left-radius: 15px; 
+            border-top-right-radius: 0; 
+            border-bottom-right-radius: 0;
+        
+            
+        }
+        @media screen and (min-width: 1000px) {
+            padding: 2em; 
+      
+        }
+        &Title {
+            color: #fff;
+            text-align: center;
+            margin: 0.5em 0;
+            padding: 0.5em;
+            font-weight: 500; 
+            font-size: 1.5rem;
+            @media screen and (min-width: 768px) {
+                text-align: left;
+                font-size: 2rem; 
+            }
+        }
+        &Text {
+            font-size: 1em;
+            text-align: center;
+            color: #fff;
+            margin: 0.5em 0;
+            padding: 0.5em;
+            @media screen and (min-width: 768px) {
+                text-align: left;
+            }
+        }
     }
-    &Title {
-        color: #fff;
-        text-align: left;
-    }
-    &Text {
-        font-size: 1em;
-        text-align: left;
-        color: #fff;
-        margin: 0.5em 0;
-        padding: 1em;
-    }
+    
     &Form {
         display: flex;
         flex-direction: column;
@@ -41,11 +73,13 @@
         margin: 1em 0;
         &Fields{
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            grid-template-columns: 1fr;  
+            gap: 0.5em;
+            /* grid-template-columns: repeat(2, minmax(0, 1fr));
             grid-template-rows: auto auto auto;
             gap: 1em;
-            width: 100%;
-            & > div {
+            width: 100%; */
+            /* & > div {
                 &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
                     grid-column: span 1;
                 }
@@ -53,42 +87,64 @@
                 &:nth-child(5) {
                     grid-column: span 2;
                 }
+            } */
+            @media screen and (min-width: 1000px) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-rows: auto auto auto;
+                gap: 1em;
+                width: 100%;
+                & > div {
+                    &:nth-child(1), &:nth-child(2), &:nth-child(3), &:nth-child(4) {
+                        grid-column: span 1;
+                    }
+            
+                    &:nth-child(5) {
+                        grid-column: span 2;
+                    }
+                }
             }
             &Wrapper{
                 display: flex;
                 flex-direction: column;
+                padding: 0.5em;
             }
             &Input {
                 padding: 1em;
                 border-radius: 5px;
                 border: 1px solid #002347;
                 margin: 0.5em 0;
+                font-family: 'Murecho', sans-serif;
                 background-color: #F4F4F4;
                 &::placeholder { 
                     color: #999;
                     font-style: italic;
                     opacity: 1; 
+                    font-family: 'Murecho', sans-serif;
                   }
                 /* Firefox 19+ */
                 input:-moz-placeholder {
                     color: #888;
                     opacity: 1;
+                    font-family: 'Murecho', sans-serif;
                 }
                 
                 /* Firefox 18- */
                 input::-moz-placeholder {
                     color: #888;
                     opacity: 1;
+                    font-family: 'Murecho', sans-serif;
                 }
                 
                 /* Internet Explorer 10-11 */
                 input:-ms-input-placeholder {
                     color: #888;
+                    font-family: 'Murecho', sans-serif;
                 }
                 
                 /* Microsoft Edge */
                 input::-ms-input-placeholder {
                     color: #888;
+                    font-family: 'Murecho', sans-serif;
                 }
                 
                 /* Standard syntax for most modern browsers */
@@ -96,19 +152,28 @@
                     color: #888;
                     font-style: italic;
                     font-weight: bold;
+                    font-family: 'Murecho', sans-serif;
                 }
                             
             }
         }
         &Agree {
             margin: 1em 0;
+            font-size: 0.8em;
+            line-height: 1.2em;
+            font-weight: 400;
             &Link {
                 color: #fff;
                 text-decoration: underline;
                 &:hover {
                     color: #0061E0;
-                    transform : scale(0.5);
+                    transform : translateX(5px);
                 }
+            }
+            @media screen and (min-width: 1000px) {
+                font-size: 1em;
+                line-height: 1.5em;
+                
             }
         }
     }
@@ -116,29 +181,44 @@
         flex: 1; 
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+
         align-items: center;
         padding: 2em;
         background-color: #EEF6FF;
-        border-top-right-radius: 15px;
-        border-bottom-right-radius: 15px; 
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 15px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 15px; 
         &Image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
+            display: none;
+            @media screen and (min-width: 768px) {
+                display: block;
+                object-fit: cover;
+                border-radius: 8px;
+            }
         }
         &Logo{
             margin: 0.5em 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            @media screen and (min-width: 768px) {
+                width: 10em;
+                height: auto;
+                
+            }
+            @media screen and (min-width: 1000px) {
+                width: 50%;
+                height: auto;
+                
+            }
         }
         &Data{
             display: flex;
             flex-direction: column;
             align-items:flex-start;
             gap: 1em;
+            margin: 1em 0;
             &Text{
                 display: flex;
                 align-items: center;
@@ -146,12 +226,13 @@
                 gap: 0.5em;
                 &Icon {
                     color: #002347;
-                    font-size: 1.5em;
-                    &:hover {
-                        color: #0061E0;
+                 
+                    
+                }
+                &:hover {
+                    color: #0061E0;
 
 
-                    }
                 }
             }
         }
