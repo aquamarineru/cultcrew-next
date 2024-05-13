@@ -50,42 +50,8 @@ export default function Hero({ homeData }) {
         ariaLabel={homeData.callToAction[0].button} 
         href={homeData.callToAction[0].link ? homeData.callToAction[0].link : '/kontakt'}
         /> 
-        {/* <Feedback
-        title={homeData.feedback.title}
-        subtitle={homeData.feedback.subtitle}
-        cards={homeData.feedback.fbCards} 
-        /> */}
-{/*         <About />  
-        <Feedback />
-        <News /> */}
-        {/* <CallToAction
-        title={ctaData.title}
-        subtitle={ctaData.subtitle}
-        btnLabel={ctaData.btnLabel}
-        href={ctaData.href}
-        ariaLabel={ctaData.ariaLabel} 
-        /> */}
       </div> 
     </section>
   );
 }
 
-
-
-/**
- * const coverData = {
-  image: '/bg.jpg',
-  title: 'Lösungen für Ihre Sicherheit - Mit Expertise und Erfahrung',
-  text: 'Unser Team aus Fachleuten bringt jahrelange Erfahrung in jeder Situation mit. Für nahezu jede Herausforderung finden wir eine Lösung – diskret, professionell und zuverlässig.',
-  btnLabel: 'Kontaktieren Sie uns',
-  href: '/kontakt',
-  ariaLabel: 'Kontaktieren Sie uns'
-}
-const ctaData = {
-  title: 'Machen Sie den ersten Schritt zu mehr Sicherheit!',
-  subtitle: 'Kontaktieren Sie uns jetzt, um individuelle Sicherheitslösungen zu entdecken. Wir melden uns umgehend bei Ihnen.',
-  btnLabel: 'Kontaktieren Sie uns',
-  href: '/kontakt',
-  ariaLabel: 'Kontaktieren Sie uns'
-}
- */

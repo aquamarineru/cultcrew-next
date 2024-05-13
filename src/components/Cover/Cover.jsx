@@ -43,11 +43,14 @@ export default function Cover({className, image, title, subtitle,  btnLabel, hre
              className={cl(className, styles.coverText)} 
              serializers={serializers}
              />
-            <Button 
-            href={href}
-            ariaLabel={ariaLabel} 
-            btnLabel={btnLabel}
-            /> 
+             {
+              btnLabel && href && ariaLabel &&
+              <Button 
+              href={href}
+              ariaLabel={ariaLabel} 
+              btnLabel={btnLabel}
+              />
+             }
         </div>
       
     </div>

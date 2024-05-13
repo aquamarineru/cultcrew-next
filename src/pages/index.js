@@ -84,6 +84,8 @@ export async function getStaticProps() {
 
     }`;
 
+    
+
     const homeData = await client.fetch(homeQuery);
     if(!homeData){
       return {
