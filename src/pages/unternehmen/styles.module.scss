@@ -1,8 +1,108 @@
-.about{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+.about {
+    display: grid;
+    gap: 1em;
+    margin: 1em 0;
+    padding: 1em;
+    
+    @media (min-width: 700px) {
+        grid-template-columns: 1fr; 
+        padding: 1.5em 2em;
+    
+        &Content:nth-child(odd) {
+            display: grid;
+            grid-template-areas: 
+                "image text";
+            grid-template-columns: 1fr 2fr; 
+            align-items: center;
+        }
+        
+        &Content:nth-child(even) {
+            display: grid;
+            grid-template-areas: 
+                "text image";
+            grid-template-columns: 2fr 1fr; 
+            align-items: center;
+            
+        }
+    }
+    &Content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @media (min-width: 700px) {
+            flex-direction: row;
+            align-items: start;
+            justify-content: space-between;
+        }
+        
+        &Text {
+            font-size: 1em;
+            line-height: 1.2;
+            margin: 0.5em 0;
+            padding: 0.5em;
+            @media (min-width: 700px) {
+                text-align: left;
+                font-size: 1.2rem;
+                grid-area: text;
+                padding: 1em;
+            }
+        }
+
+        &Image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 8px;
+            @media (min-width: 700px) {
+                grid-area: image;
+            }
+        }
+    }
+}
+.team {
+    &Slider{
+        padding: 1rem;
+    }
+    &Member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &Image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 100%;
+            margin-bottom: .5em;
+        }
+        &Name {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 0.5em 0;
+        }
+        &Position {
+            font-size: 1em;
+            margin: 0.5em 0;
+        }
+        &Contact {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+            margin: 1em 0;
+            &Data {
+                display: flex;
+                gap: 1em;
+                align-items: center;
+                &Icon {
+                    width: 20px;
+                    height: 20px;
+                }
+                &Text {
+                    font-size: 1em;
+                }
+            }
+        }
+    }
 }

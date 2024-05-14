@@ -8,9 +8,9 @@ import Title from '@/components/Title/Title';
 
 export default function Team({className, teamData, title}) {
   return (
-    <div>
+    <div className={cl(className, styles.team)}>
       <Title type="medium">{title}</Title>
-        <Slider>
+        <Slider className={cl(className, styles.teamSlider)}>
             {teamData.map((item, index) => (
                 <SwiperSlide key={index}>
                     <TeamMember 
