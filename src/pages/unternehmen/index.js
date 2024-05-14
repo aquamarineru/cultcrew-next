@@ -1,23 +1,55 @@
 import React from 'react'
 import styles from './styles.module.scss'
 import cl from 'classnames'
-import { client } from "../../../lib/client";
+import { client } from '../../../lib/client'
 import Cover from '@/components/Cover/Cover'
-import AboutText from './AboutText'
+import CompanyHistory from './CompanyHistory'
+import Team from './Team'
+import Qualification from '@/components/Qualification/Qualification'
+import Education from './Education'
+import CallToAction from '@/components/CTA/CallToAction'
+import Contact from '@/components/Contact/Contact'
 
-export default function Unternehmen({className, aboutData}) {
+export default function Unternehmen({className, data, contactData}) {
+
   return (
     <div>
       <Cover 
-      title={aboutData.title} 
-      subtitle={aboutData.subtitle}
-      image={aboutData.image.asset._ref}
+      title={data.title} 
+      subtitle={data.subtitle}
+      image={data.image.asset._ref}
       />
-      <AboutText 
-      aboutBlock={aboutData.aboutText}
-      image={aboutData.aboutText.image}
-      title={aboutData.aboutText.title}
+      <CompanyHistory
+        description={data.aboutText}
       />
+      <Team
+        teamData={data.team}
+        title={data.teamTitle}
+      />
+      <Qualification 
+        data={data.qualification[0].qualificationCards}
+        title={data.qualification[0].title}
+      />
+      <Education
+        title={data.education.title}
+        text={data.education.text}
+        image={data.education.image}
+      />
+       <CallToAction
+        title={data.callToAction[0].title}
+        subtitle={data.callToAction[0].subtitle}
+        btnLabel={data.callToAction[0].button}
+        ariaLabel={data.callToAction[0].button} 
+        href={data.callToAction[0].link ? data.callToAction[0].link : '/jobs'}
+        /> 
+        <Contact 
+        title={contactData.title}
+        subtitle={contactData.subtitle}
+        image={contactData.image.asset.url}
+        logo={contactData.contactDetails.logo}
+        address={contactData.contactDetails.address}
+        phone={contactData.contactDetails.additionalPhone}
+        email={contactData.contactDetails.additionalEmail} />
     </div>
   )
 }
@@ -38,6 +70,7 @@ export async function getStaticProps() {
       },
         text
       },
+      teamTitle,
       team[]{
         name,
         position,
@@ -49,16 +82,27 @@ export async function getStaticProps() {
         title,
         qualificationCards[]{
           title,
-          image,
+          image{
+            asset->{
+                _id,
+                url
+            },
+        },
         }
       },
       education{
         title,
         text,
-        image,
+        image{
+          asset->{
+              _id,
+              url
+          },
+      },
       },
       callToAction[]{
         title,
+        subtitle,
         button,
         link
       },
@@ -70,8 +114,26 @@ export async function getStaticProps() {
         link
       }
     }`;
-    const aboutData = await client.fetch(aboutQuery);
-    if(!aboutData){
+
+    const contactQuery = `*[ _type == "contact" ]{
+      title,
+      subtitle,
+      image{
+        asset->{
+          _id,
+          url
+        },
+      },
+      contactDetails{
+        logo,
+        address,
+        additionalPhone,
+        additionalEmail,
+      },
+    }`
+    const data = await client.fetch(aboutQuery);
+    const contactData = await client.fetch(contactQuery);
+    if(!data){
       return {
         props: {
           error: "No data found",
@@ -80,7 +142,8 @@ export async function getStaticProps() {
     }
     return {
       props: {
-        aboutData: aboutData[0]
+        data: data[0],
+        contactData: contactData[0],
       },
       revalidate: 60
     }

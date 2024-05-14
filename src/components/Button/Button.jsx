@@ -5,9 +5,13 @@ import styles from './styles.module.scss'
 
 
 export default function Button({href, btnLabel, ariaLabel, className}) {
-  return (
-  <Link href={href} className={cl(styles.button)} aria-label={ariaLabel}>
-        {btnLabel}
+  return href ? (
+    <Link href={href} className={cl(styles.button, className)} aria-label={ariaLabel}>
+      {btnLabel}
     </Link>
-  )
+  ) : (
+    <button className={cl(styles.button, className)} aria-label={ariaLabel}>
+      {btnLabel}
+    </button>
+  );
 }
