@@ -44,7 +44,7 @@ export default function Education({ className, title, text, image }) {
             <Title type="medium">{title}</Title>
             <div className={cl(className, styles.educationContent)}>
                 <div>
-                    <PortableText value={text} components={components} className={cl(className, styles.text)} projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID} />
+                    <PortableText value={text} components={components} className={cl(className, styles.text)} />
                 </div>
                 <Image 
                     src={urlFor(image).url()} 

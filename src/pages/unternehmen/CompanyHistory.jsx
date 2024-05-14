@@ -50,7 +50,7 @@ export default function CompanyHistory({ className, description, title }) {
                             className={styles.aboutContentImage}
                         />
                     )}
-                    <PortableText value={item.text} components={components} className={cl(className, styles.text)} projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                    <PortableText value={item.text} components={components} className={cl(className, styles.text)}
                     />
                 </div>
             ))}
