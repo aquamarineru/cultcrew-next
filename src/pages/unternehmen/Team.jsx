@@ -6,7 +6,7 @@ import Slider from '@/components/Slider/Slider';
 import TeamMember from './TeamMember';
 import Title from '@/components/Title/Title';
 
-export default function Team({className, teamData, title}) {
+export default function Team({className, teamData = [], title}) {
   return (
     <div className={cl(className, styles.team)}>
       <Title type="medium">{title}</Title>

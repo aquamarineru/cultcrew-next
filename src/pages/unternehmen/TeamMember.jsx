@@ -10,7 +10,7 @@ export default function TeamMember({className, name, position, image, email, pho
   return (
     <div className={cl(className, styles.teamMember)}>
       <Image 
-      src={urlFor(image).url()} 
+      src={urlFor(image?.asset).url()} 
       alt={name} 
       width={200}
       height={200}

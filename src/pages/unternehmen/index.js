@@ -33,7 +33,7 @@ export default function Unternehmen({className, data, contactData}) {
       <Education
         title={data.education.title}
         text={data.education.text}
-        image={data.education.image}
+        image={data.education.image?.asset.url}
       />
        <CallToAction
         title={data.callToAction[0].title}
