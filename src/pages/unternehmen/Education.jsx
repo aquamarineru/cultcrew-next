@@ -40,7 +40,7 @@ export default function Education({ className, title, text, image }) {
     };
 
     return (
-        <div className={cl(className, styles.education)}>
+        <div className={cl(className, styles.education, styles.container)}>
             <Title type="medium">{title}</Title>
             <div className={cl(className, styles.educationContent)}>
                 <div>

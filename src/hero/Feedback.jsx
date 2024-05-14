@@ -6,11 +6,9 @@ import Image from "next/legacy/image"
 import Slider from '@/components/Slider/Slider'
 import { SwiperSlide } from 'swiper/react';
 import FeedbackCard from '@/components/Slider/FeedbackCard';
-import BlockContent from '@sanity/block-content-to-react'
-import classNames from 'classnames'
 
 
-export default function Feedback({className, title, subtitle, cards}) {
+export default function Feedback({className, title, company, subtitle, cards}) {
   return (
     <div className={cl(className, styles.services, styles.feedback)}>
         <Image
@@ -27,6 +25,7 @@ export default function Feedback({className, title, subtitle, cards}) {
                 <SwiperSlide key={index}>
                     <FeedbackCard 
                     name={item.name} 
+                    company={item.company}
                     text={item.text} />
                 </SwiperSlide>
             ))} 

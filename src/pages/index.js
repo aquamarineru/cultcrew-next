@@ -57,6 +57,7 @@ export async function getStaticProps() {
         subtitle,
         fbCards[]{
           name,
+          company,
           text,
         }
       },

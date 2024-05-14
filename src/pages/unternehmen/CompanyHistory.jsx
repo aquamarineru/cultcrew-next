@@ -38,7 +38,7 @@ export default function CompanyHistory({ className, description, title }) {
     };
 
     return (
-        <div className={cl(styles.about, className)}>
+        <div className={cl(styles.about, className, styles.container)}>
             {description.map((item, index) => (
                 <div key={index} className={cl(styles.aboutContent)}>
                     {item.aboutImage && (
