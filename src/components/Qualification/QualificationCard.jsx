@@ -6,14 +6,14 @@ import { urlFor } from '../../../lib/client';
 
 export default function QualificationCard({className, title, image}) {
   return (
-    <div>
+    <div className={cl(className, styles.qualificationCard)}>
        <Image 
         src={urlFor(image).url()}
         alt={title}
         width={200}
         height={200}
+        className={cl(className, styles.qualificationCardImage)}
         /> 
-        <h3>{title}</h3>
     </div>
   )
 }

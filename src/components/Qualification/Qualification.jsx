@@ -8,22 +8,20 @@ import Slider from '@/components/Slider/Slider';
 import QualificationCard from './QualificationCard';
 
 export default function Qualification({ className, data, title}) {
-  console.log(data)
   return (
-    <div className={cl(className, styles.qualificationContainer)}>
+    <div className={cl(className, styles.qualification)}>
       <Title type ='medium'> {title} </Title>
-      <div>
-      <Slider>
-       {data.map((item, index) => (
-          <SwiperSlide key={index}>
-            <QualificationCard 
-              className={styles.qualificationCard}
-              title={item.title}
-              image={item.image}
-            />
-          </SwiperSlide>
-        ))} 
-      </Slider>
+      <div className={cl(className, styles.qualificationSlider)}>
+        <Slider className={cl(className, styles.qualificationSlider)}>
+        {data.map((item, index) => (
+            <SwiperSlide key={index}>
+              <QualificationCard 
+                title={item.title}
+                image={item.image}
+              />
+            </SwiperSlide>
+          ))} 
+        </Slider>
 
       </div>
       

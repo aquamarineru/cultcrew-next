@@ -102,6 +102,7 @@ export async function getStaticProps() {
       },
       callToAction[]{
         title,
+        subtitle,
         button,
         link
       },

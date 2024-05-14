@@ -4,36 +4,56 @@ import Image from 'next/image';
 import Title from '@/components/Title/Title';
 import { urlFor } from '../../../lib/client';
 import styles from './styles.module.scss';
+import cl from 'classnames';
+import { IoCheckmarkCircle } from "react-icons/io5";
+
 
 export default function Education({ className, title, text, image }) {
     const components = {
         block: {
-            normal: ({ children }) => <p>{children}</p>,
-            h3: ({ children }) => <h3>{children}</h3>,
-            blockquote: ({ children }) => <blockquote>{children}</blockquote>,
-            bullet: ({ children }) => <ul><li>{children}</li></ul>,  // This is unconventional
+            normal: ({ children }) => <p className={cl(className, styles.textNormal)}>{children}</p>,
+            h3: ({ children }) => <h3 className={cl(className, styles.textH3)}>{children}</h3>,
+            blockquote: ({ children }) => <blockquote className={cl(className, styles.textQuote)}>{children}</blockquote>,
+            bullet: ({ children }) => <ul className={cl(className, styles.textBullet)}><li className={cl(className, styles.textBulletItem)}><IoCheckmarkCircle /> {children}</li></ul>,  
         },
         list: {
-            bullet: ({ children }) => <ul className={styles.mtXl}>{children}</ul>,
-            number: ({ children }) => <ol className={styles.mtLg}>{children}</ol>,
-            checkmarks: ({ children }) => <ol className={styles.mAutoTextLg}>{children}</ol>,
+            bullet: ({ children }) => <ul className={cl(className, styles.textBullet)}>{children}</ul>,
+            number: ({ children }) => <ol className={cl(className, styles.textNumber)}>{children}</ol>,
+            checkmarks: ({ children }) => <ol className={cl(className, styles.textCheck)}>{children}</ol>,
         },
         listItem: {
-            bullet: ({ children }) => <li style={{ listStyleType: 'disclosure-closed' }}>{children}</li>,
-            checkmarks: ({ children }) => <li>✅ {children}</li>,
+            bullet: ({ children }) => <li>{children}</li>,
+            number: ({ children }) => <li>{children}</li>,
         },
+        marks: {
+            strong: ({ children }) => <strong className={cl(className, styles.textStrong)}>{children}</strong>,
+            em: ({ children }) => <em className={cl(className, styles.textEm)}>{children}</em>,
+            link: ({value, children}) => {
+                const target = (value?.href || '').startsWith('http') ? '_blank' : undefined
+                return (
+                  <a href={value?.href} target={target} rel={target === '_blank' && 'noindex nofollow'} className={cl(className, styles.textLink)}>
+                    {children}
+                  </a>
+                )
+              },
+        }
     };
 
     return (
-        <div className={className}>
+        <div className={cl(className, styles.education)}>
             <Title type="medium">{title}</Title>
-            <PortableText value={text} components={components} />
-            <Image 
-                src={urlFor(image).url()} 
-                alt="education"
-                width={250} 
-                height={400} 
-            />
+            <div className={cl(className, styles.educationContent)}>
+                <div>
+                    <PortableText value={text} components={components} className={cl(className, styles.text)} />
+                </div>
+                <Image 
+                    src={urlFor(image).url()} 
+                    alt="education"
+                    width={250} 
+                    height={400} 
+                    className={cl(className, styles.educationImage)}
+                />
+            </div>
         </div>
     );
 }
