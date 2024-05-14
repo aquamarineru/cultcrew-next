@@ -7,6 +7,7 @@ import {  IoMail, IoCallSharp  } from "react-icons/io5";
 
 
 export default function TeamMember({className, name, position, image, email, phone}) {
+  console.log(image)  
   return (
     <div className={cl(className, styles.teamMember)}>
       <Image 

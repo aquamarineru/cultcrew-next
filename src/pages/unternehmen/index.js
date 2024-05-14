@@ -74,7 +74,12 @@ export async function getStaticProps() {
       team[]{
         name,
         position,
-        image,
+        image{
+          asset->{
+            _id,
+            url
+          }
+        },
         email,    
         phone,
       },
@@ -84,10 +89,10 @@ export async function getStaticProps() {
           title,
           image{
             asset->{
-                _id,
-                url
-            },
-        },
+              _id,
+              url
+            }
+          },
         }
       },
       education{
@@ -95,10 +100,10 @@ export async function getStaticProps() {
         text,
         image{
           asset->{
-              _id,
-              url
-          },
-      },
+            _id,
+            url
+          }
+        },
       },
       callToAction[]{
         title,
@@ -109,7 +114,12 @@ export async function getStaticProps() {
       contact{
         title,
         text,
-        image,
+        image{
+          asset->{
+            _id,
+            url
+          }
+        },
         button,
         link
       }
