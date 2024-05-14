@@ -133,13 +133,10 @@ export async function getStaticProps() {
     }`
     const data = await client.fetch(aboutQuery);
     const contactData = await client.fetch(contactQuery);
-    if(!data){
-      return {
-        props: {
-          error: "No data found",
-        },
-      };
-    }
+    if (!data.length || !contactData.length) {
+      console.error('No data found');
+      return { props: { error: "No data found" } };
+  }
     return {
       props: {
         data: data[0],

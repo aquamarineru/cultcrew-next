@@ -6,7 +6,7 @@ import { urlFor } from '../../../lib/client';
 import { PortableText } from '@portabletext/react';
 import { IoCheckmarkCircle } from "react-icons/io5";
 
-export default function CompanyHistory({ className, description, title }) {
+export default function CompanyHistory({ className, description = [], title }) {
     const components = {
         block: {
             normal: ({ children }) => <p className={cl(className, styles.textNormal)}>{children}</p>,
@@ -43,7 +43,7 @@ export default function CompanyHistory({ className, description, title }) {
                 <div key={index} className={cl(styles.aboutContent)}>
                     {item.aboutImage && (
                         <Image
-                            src={urlFor(item.aboutImage.asset).url()}
+                            src={urlFor(item.aboutImage?.asset).url()}
                             alt={item.aboutImage.alt || title}
                             width={200}
                             height={200}
