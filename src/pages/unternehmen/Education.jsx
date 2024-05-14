@@ -38,7 +38,7 @@ export default function Education({ className, title, text, image }) {
               },
         }
     };
-
+console.log(image)
     return (
         <div className={cl(className, styles.education, styles.container)}>
             <Title type="medium">{title}</Title>
@@ -46,13 +46,15 @@ export default function Education({ className, title, text, image }) {
                 <div>
                     <PortableText value={text} components={components} className={cl(className, styles.text)} />
                 </div>
-                <Image 
+                {image && (
+                    <Image 
                     src={urlFor(image).url()} 
                     alt="education"
                     width={250} 
                     height={400} 
                     className={cl(className, styles.educationImage)}
                 />
+                )}
             </div>
         </div>
     );

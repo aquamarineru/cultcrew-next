@@ -7,16 +7,17 @@ import {  IoMail, IoCallSharp  } from "react-icons/io5";
 
 
 export default function TeamMember({className, name, position, image, email, phone}) {
-  console.log(image)  
   return (
     <div className={cl(className, styles.teamMember)}>
-      <Image 
-      src={urlFor(image?.asset).url()} 
-      alt={name} 
-      width={200}
-      height={200}
-      className={styles.teamMemberImage}
-      />
+      {image && (
+        <Image 
+        src={urlFor(image).url()} 
+        alt={name} 
+        width={200}
+        height={200}
+        className={styles.teamMemberImage}
+        />
+      )}
       <h3 className={cl(className, styles.teamMemberName)}>{name}</h3>
       <p className={cl(className, styles.teamMemberPosition)}>{position}</p>
       <div className={cl(className, styles.teamMemberContact)}>
