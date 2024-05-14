@@ -53,7 +53,7 @@ export default function About({className, text, image,  button, ariaLabel}) {
             
         )}
         <div className={cl(className, styles.aboutText)}>
-         <PortableText value={text} components={components}></PortableText>
+         <PortableText value={text} components={components} projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}></PortableText>
         </div>
             
         </div>

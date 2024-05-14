@@ -35,7 +35,7 @@ export default function FeedbackCard({className, name, text, company}) {
   return (
     <div className={cl(styles.feedbackCard)}>
         <div className={cl(className, styles.feedbackCardText)}>
-         <PortableText value={text} components={components}></PortableText>
+         <PortableText value={text} components={components} projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}></PortableText>
         </div>
         <p className={cl(className, styles.feedbackCardName)}>{name}</p>
         <p className={cl(className, styles.feedbackCardCompany)}>{company}</p>
