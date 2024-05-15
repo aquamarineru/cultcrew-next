@@ -1,18 +1,16 @@
-import React from 'react';
-import Image from 'next/image';
-import styles from './styles.module.scss';
-import cl from 'classnames';
-import { urlFor } from '../../../lib/client';
-import { PortableText } from '@portabletext/react';
+import React from 'react'
+import styles from './styles.module.scss'
+import cl from 'classnames'
+import Link from 'next/link'
+import { PortableText } from '@portabletext/react'
 import { IoCheckmarkCircle } from "react-icons/io5";
 
-export default function CompanyHistory({ className, description = [], title }) {
-    if (!description || !description.length) {
-        return <div>No history data available.</div>;
-    }
+export default function ServicesCard({ className, title, text, slug}) {
+
     const components = {
         block: {
             normal: ({ children }) => <p className={cl(className, styles.textNormal)}>{children}</p>,
+            h2:({ children }) => <h2 className={cl(className, styles.textH2)}>{children}</h2>,
             h3: ({ children }) => <h3 className={cl(className, styles.textH3)}>{children}</h3>,
             blockquote: ({ children }) => <blockquote className={cl(className, styles.textQuote)}>{children}</blockquote>,
             bullet: ({ children }) => <ul className={cl(className, styles.textBullet)}><li className={cl(className, styles.textBulletItem)}><IoCheckmarkCircle /> {children}</li></ul>,  
@@ -39,25 +37,14 @@ export default function CompanyHistory({ className, description = [], title }) {
               },
         }
     };
-
-    return (
-        <div className={cl(styles.about, className, styles.container)}>
-            {description.map((item, index) => (
-                <div key={index} className={cl(styles.aboutContent)}>
-                    {item.aboutImage && (
-                        <Image
-                            src={urlFor(item.aboutImage?.asset)?.url()}
-                            alt={item.aboutImage.alt || title}
-                            width={200}
-                            height={200}
-                            className={styles.aboutContentImage}
-                            key={item.aboutImage._key}
-                        />
-                    )}
-                    <PortableText value={item.text} components={components} className={cl(className, styles.text)}
-                    />
-                </div>
-            ))}
-        </div>
-    );
+  return (
+    <div>
+        <Link href={`/services/${encodeURIComponent(slug)}` }className={cl(className, styles.services)}>
+            <div  className={cl(className, styles.servicesCard)}>
+                <h3 className={cl(className, styles.servicesTitle)}>{title}</h3>
+                <PortableText value={text} components={components} />
+            </div>
+    </Link>
+    </div>
+  )
 }

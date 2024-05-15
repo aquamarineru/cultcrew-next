@@ -2,10 +2,11 @@ import React from 'react'
 import Image from "next/legacy/image"
 import styles from './styles.module.scss'
 import cl from 'classnames'
+import Link from 'next/link'
 
-export default function Cards({image, title, description, className}) {
+export default function Cards({image, title, description, slug, className}) {
   return (
-    <div className={cl(className, styles.card)}>
+    <Link href={`/services/${encodeURIComponent(slug)}`} className={cl(className, styles.card)}>
         <Image 
         src={image} 
         width={120} 
@@ -14,6 +15,6 @@ export default function Cards({image, title, description, className}) {
         className={cl(className, styles.cardIcon)} />
         <h3 className={cl(className, styles.cardTitle)}>{title}</h3>
         <p className={cl(className, styles.cardDescription)}>{description}</p>
-  </div>
+  </Link>
   )
 }

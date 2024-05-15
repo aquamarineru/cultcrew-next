@@ -56,6 +56,7 @@ export default function Unternehmen({className, data, contactData}) {
 export async function getStaticProps() {
   try{
     const aboutQuery = `*[ _type == "unternehmen" ]{
+      _id,
       title,
       subtitle,
       image,
@@ -72,6 +73,7 @@ export async function getStaticProps() {
       },
       teamTitle,
       team[]{
+        _id,
         name,
         position,
         image{
@@ -84,8 +86,10 @@ export async function getStaticProps() {
         phone,
       },
       qualification[]{
+        _id,
         title,
         qualificationCards[]{
+          _id,
           title,
           image{
             asset->{
@@ -96,6 +100,7 @@ export async function getStaticProps() {
         }
       },
       education{
+        _id,
         title,
         text,
         image{
@@ -106,12 +111,14 @@ export async function getStaticProps() {
         },
       },
       callToAction[]{
+        _id,
         title,
         subtitle,
         button,
         link
       },
       contact{
+        _id,
         title,
         text,
         image{
@@ -126,6 +133,7 @@ export async function getStaticProps() {
     }`;
 
     const contactQuery = `*[ _type == "contact" ]{
+      _id,
       title,
       subtitle,
       image{
@@ -135,6 +143,7 @@ export async function getStaticProps() {
         },
       },
       contactDetails{
+        _id,
         logo,
         address,
         additionalPhone,

@@ -9,7 +9,7 @@ export default function Card({className, image, title, subtitle, link}) {
   return (
     <div className={cl(className, styles.card)} >
       <Link
-      href={link}>
+      href={`/news/${encodeURIComponent(link)}`}>
          <Image
           src={urlFor(image).url()} 
           width={250} 

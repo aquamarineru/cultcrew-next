@@ -58,7 +58,7 @@ export default function Cover({className, image, title, subtitle,  btnLabel, hre
             { title } 
             </Title>
             <div className={cl(className, styles.coverText)}>
-              <PortableText value={subtitle} components={components} projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}  />
+              <PortableText value={subtitle} components={components}  />
             </div>
             {
               btnLabel && href && ariaLabel &&

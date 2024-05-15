@@ -8,6 +8,7 @@ import cl from 'classnames';
 const murecho = Murecho({ subsets: ["latin"] });
 
 export default function Home({ homeData }) {
+  console.log(homeData);
   return (
     <main className="">
       <Hero homeData={homeData}/>
@@ -18,6 +19,7 @@ export default function Home({ homeData }) {
 export async function getStaticProps() {
   try{
     const homeQuery = `*[ _type == "home" ]{
+      _id,
       title,
       subtitle,
       button,
@@ -30,7 +32,7 @@ export async function getStaticProps() {
       services{
         title,
         subtitle,
-        cards[]{
+        cards[]->{
           title,
           subtitle,
           Image{
@@ -40,6 +42,7 @@ export async function getStaticProps() {
             }
           },
           button,
+          slug
         }
       },
       about{
