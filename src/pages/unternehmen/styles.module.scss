@@ -128,48 +128,7 @@
         }
     }
 }
-.text {
-    &Normal {
-      font-weight: normal;
-      line-height: 1.3;
-    }
-    &H3{
-        font-size: 1.5em;
-        font-weight: bold;
-        margin: 1em 0;
-    }
-    &Strong {
-      font-weight: bold;
-    }
-    &Quote {
-        font-style: italic;
-        padding-left: 1em;
-        border-left: 3px solid #ccc;
-        margin: 1em 0;
-      }
-    
-      &Link {
-        color: blue;
-        text-decoration: underline;
-    
-        &:hover {
-          color: darkblue;
-        }
-      }
-      &Number {
-        list-style: decimal;
-      }
-      &Bullet  {
-        list-style-type: none;
-        &Item {
-            display: flex;
-            gap: 1em;
-            align-items: center;
-            margin: 1em 0;
-            list-style-type: none;
-        }
-      }
-  }
+
 .education {
     display: flex;
     flex-direction: column;

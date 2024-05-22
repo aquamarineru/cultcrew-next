@@ -24,12 +24,10 @@ export default function News({className, initialPosts, total}) {
       setLoading(false);
     }
   };
-
-    console.log(initialPosts)
+console.log(posts)
   return (
     <div className={cl(className, styles.news)}>
-      <h1>News</h1>
-      <div>
+      <div className={cl(className, styles.newsCards)}>
         {posts.map(post => (
           <Card
             key={post._id}
@@ -40,11 +38,17 @@ export default function News({className, initialPosts, total}) {
           />
         ))}
       </div>
-      {isLoadButtonVisible && (
-        <button onClick={getMorePosts} disabled={loading}>
-          {loading ? 'Loading...' : 'Load More'}
-        </button>
-      )}
+      <div className={cl(className, styles.newsButton)}>
+        {isLoadButtonVisible && (
+            <button className={cl(className, styles.newsBtn)} onClick={getMorePosts} disabled={loading} aria-label="Mehr anzeigen">
+              {loading ? 'Laden ...' : 'Mehr anzeigen'}
+            </button>
+          )}
+
+      </div>
+        
+
+      
     </div>
   )
 }

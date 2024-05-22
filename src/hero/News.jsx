@@ -12,7 +12,7 @@ export default function News({className, title, subtitle, posts}) {
   return (
     <div className={cl(className, styles.news)}>
       <Title type="medium">{title}</Title>
-      <div className={cl(className, styles.coverText)}>
+      <div className={cl(className, styles.newsText)}>
           {subtitle && Array.isArray(subtitle) && subtitle.length > 0 ? (
             <Block blocks={subtitle} />
           ) : (

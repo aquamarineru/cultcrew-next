@@ -7,7 +7,7 @@ import Button from '@/components/Button/Button';
 import { urlFor } from '../../../lib/client';
 import Block from '@/components/blockContent/Block';
 
-export default function Cover({ className, image, title, subtitle, btnLabel, href, ariaLabel }) {
+export default function Cover({ className, image, title, subtitle, btnLabel, href, ariaLabel, date, timeToRead }) {
 
   return (
     <div className={cl(className, styles.cover)}>
@@ -34,6 +34,13 @@ export default function Cover({ className, image, title, subtitle, btnLabel, hre
             <p>No subtitle available</p>
           )}
         </div>
+        {
+          date && timeToRead &&
+          <div className={cl(className, styles.coverPost)}>
+            <p> Datum der Publikation : {date}</p>
+            <p>Lesenzeit :  {timeToRead} </p>
+          </div>
+        }
         {btnLabel && href && ariaLabel &&
           <Button
             href={href}

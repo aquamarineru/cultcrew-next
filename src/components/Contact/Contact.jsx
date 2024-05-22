@@ -3,7 +3,6 @@ import styles from './styles.module.scss'
 import cl from 'classnames'
 import { urlFor } from '../../../lib/client'
 import Image from 'next/image'
-import Title from '../Title/Title'
 import Form from './Form'
 import { IoLocationSharp, IoMail, IoCallSharp  } from "react-icons/io5";
 

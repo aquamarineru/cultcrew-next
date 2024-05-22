@@ -1,35 +1,55 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import cl from 'classnames';
 import { client } from '../../../lib/client';
 import styles from './styles.module.scss';
+import Image from 'next/image';
+import Cover from '@/components/Cover/Cover';
+import { format } from "date-fns";
+import Block from '@/components/blockContent/Block';
 
 export default function Post({ post, className }) {
   const router = useRouter();
   if (router.isFallback) {
     return <div>Loading...</div>;
   }
-
+  let date = 'Invalid date';
+  if (post.body.date) {
+    try {
+      date = format(new Date(post.body.date), 'dd/MM/yyyy');
+    } catch (error) {
+      console.error('Date parsing error:', error);
+    }
+  }
   console.log(post);
 
   return (
-    <div className={className || styles.post}>
-      <h1>{post.title}</h1>
-      <h2>{post.subtitle && post.subtitle.map(block => block.children.map(child => child.text).join(' ')).join(' ')}</h2>
-      <img src={post.image.asset.url} alt={post.title} />
-      <div>
-        <h3>Post Details</h3>
-        <p>Date: {post.body.date}</p>
-        <p>Time to Read: {post.body.timeToRead}</p>
-        <div>
-          {post.body.image && <img src={post.body.image.asset.url} alt="Post Image" />}
-          <div>
-            {post.body.postText && post.body.postText.map(block => (
-              block.children.map(child => (
+    <div className={cl(className, styles.post)}>
+      <Cover 
+        title={post.title}
+        subtitle={post.subtitle}
+        image={post.image.asset.url}
+        date={date}
+        timeToRead={post.body.timeToRead}
+      />
+      <div className={cl(className, styles.postBody)}>
+          {post.body.image && (
+          <Image
+            src={post.body.image.asset.url}
+            alt="Post Image"
+            width={300}
+            height={300}
+            className={styles.postBodyImg}
+          />
+        )}
+        <div className={cl(className, styles.postBodyText)}>
+          {post.body.postText &&
+            post.body.postText.map((block) =>
+              block.children.map((child) => (
                 <p key={child._key}>{child.text}</p>
               ))
-            ))}
+            )}
           </div>
-        </div>
       </div>
     </div>
   );

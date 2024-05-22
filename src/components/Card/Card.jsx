@@ -22,7 +22,10 @@ export default function Card({className, image, title, subtitle, link}) {
       <div className={styles.cardContent}>
         <h2 className={styles.cardTitle}>{title}</h2>
         <Block blocks={subtitle} className={styles.cardText} />
-        <IoArrowForwardCircle className={styles.cardIcon} />
+        <div className={cl(className, styles.cardButton)}>
+          Mehr 
+          <IoArrowForwardCircle className={styles.cardButtonIcon} />
+        </div>
       </div>
     </Link> 
 
