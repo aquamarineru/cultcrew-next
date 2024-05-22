@@ -10,7 +10,7 @@ const murecho = Murecho({ subsets: ["latin"] });
 export default function Home({ homeData }) {
   console.log(homeData);
   return (
-    <main className="">
+    <main className={cl(styles.main, murecho.className)}>
       <Hero homeData={homeData}/>
     </main>
   );
@@ -33,6 +33,7 @@ export async function getStaticProps() {
         title,
         subtitle,
         cards[]->{
+          _id,
           title,
           subtitle,
           Image{
@@ -41,7 +42,6 @@ export async function getStaticProps() {
               url
             }
           },
-          button,
           slug
         }
       },
@@ -59,6 +59,7 @@ export async function getStaticProps() {
         title,
         subtitle,
         fbCards[]{
+          _id,
           name,
           company,
           text,
@@ -67,19 +68,22 @@ export async function getStaticProps() {
       news{
         title,
         subtitle,
-        newsCards[]{
+        posts[]->{
+          _id,
           title,
           subtitle,
-          slug,
-          Image{
+          image{
             asset->{
               _id,
               url
             }
-          }
+          },
+          slug,
+          body,
         }
       },
       callToAction[]{
+        _id,
         title,
         subtitle,
         button,

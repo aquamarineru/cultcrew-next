@@ -11,14 +11,14 @@ export default function Services({className, servicesData}) {
   console.log(servicesData)
   return (
     <div>
-      <Cover 
+     <Cover 
       title={servicesData.title} 
       subtitle={servicesData.subtitle}
       image={servicesData.image.asset._ref}
       />
-       {servicesData.cards.map((card, index) => (
+      {servicesData.cards.map((card, index) => (
         <ServicesCard
-        key={card._id || index}
+          key={card._id || index}
           title={card.title}
           text={card.text}
           slug={card.slug.current}

@@ -4,12 +4,14 @@ import cl from 'classnames'
 import Image from "next/legacy/image"
 import Link from 'next/link'
 import { urlFor } from '../../../lib/client'
+import Block from '@/components/blockContent/Block';
+import { IoArrowForwardCircle } from "react-icons/io5";
 
 export default function Card({className, image, title, subtitle, link}) {
   return (
     <div className={cl(className, styles.card)} >
-      <Link
-      href={`/news/${encodeURIComponent(link)}`}>
+       <Link
+        href={`/news/${encodeURIComponent(link)}`}>
          <Image
           src={urlFor(image).url()} 
           width={250} 
@@ -19,9 +21,10 @@ export default function Card({className, image, title, subtitle, link}) {
         /> 
       <div className={styles.cardContent}>
         <h2 className={styles.cardTitle}>{title}</h2>
-        <p className={styles.cardText}>{subtitle}</p>
+        <Block blocks={subtitle} className={styles.cardText} />
+        <IoArrowForwardCircle className={styles.cardIcon} />
       </div>
-    </Link>
+    </Link> 
 
     </div>
     

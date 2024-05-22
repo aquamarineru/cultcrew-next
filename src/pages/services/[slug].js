@@ -6,52 +6,17 @@ import styles from './styles.module.scss';
 import { client, urlFor } from '../../../lib/client';
 import Cover from '@/components/Cover/Cover';
 import Image from 'next/image';
+import Block from '@/components/blockContent/Block';
 
 export default function ServicePage({data, className}) {
-    console.log(data);  
+    
     const router = useRouter();
     if (router.isFallback) {
         return <div>Loading...</div>;
     }
 
-    const components = {
-        block: {
-            normal: ({ children }) => <p className={cl(className, styles.textNormal)}>{children}</p>,
-            h3: ({ children }) => <h3>{children.map(child => child.text)}</h3>,
-            blockquote: ({ children }) => <blockquote className={cl(className, styles.textQuote)}>{children}</blockquote>,
-            bullet: ({ children }) => <ul className={cl(className, styles.textBullet)}><li className={cl(className, styles.textBulletItem)}>{children}</li></ul>,
-            default: ({ children }) => <div>{children}</div>,
-        },
-        types: {
-            image: ({ value }) => {
-              return <div>IMAGE: {value}</div>;
-            }
-          },
-        list: {
-            bullet: ({ children }) => <ul className={cl(className, styles.textBullet)}>{children}</ul>,
-            number: ({ children }) => <ol className={cl(className, styles.textNumber)}>{children}</ol>,
-            checkmarks: ({ children }) => <ol className={cl(className, styles.textCheck)}>{children}</ol>,
-        },
-        listItem: {
-            bullet: ({ children }) => <li>{children}</li>,
-            number: ({ children }) => <li>{children}</li>,
-        },
-        marks: {
-            strong: ({ children }) => <strong className={cl(className, styles.textStrong)}>{children}</strong>,
-            em: ({ children }) => <em className={cl(className, styles.textEm)}>{children}</em>,
-            link: ({ value, children }) => {
-                const target = (value?.href || '').startsWith('http') ? '_blank' : undefined;
-                return (
-                    <a href={value?.href} target={target} rel={target === '_blank' ? 'noopener noreferrer' : undefined} className={cl(className, styles.textLink)}>
-                        {children}
-                    </a>
-                );
-            },
-        },
-    };
-
     return (
-        <div>
+        <div> 
             <Cover
                 title={data.title}
                 image={data.image} 
@@ -60,10 +25,10 @@ export default function ServicePage({data, className}) {
             <div>
                 {data.body.map((section, index) => (
                     <div key={section._id || index}>
-                        <PortableText value={section.body} components={components} />
+                        <Block blocks={section.body}  />
                     </div>
                 ))}
-            </div>
+            </div> 
         </div>
     );
 }

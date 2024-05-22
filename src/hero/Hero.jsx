@@ -11,6 +11,11 @@ import News from './News';
 
 
 export default function Hero({ homeData }) {
+  if (!homeData) {
+    return <div>No data available</div>;
+  }
+  console.log(homeData) 
+  const callToAction = homeData.callToAction && homeData.callToAction[0];
   return (
     <section className={cl(styles.section)}>
       <Cover 
@@ -21,19 +26,19 @@ export default function Hero({ homeData }) {
        href='/kontakt'
        ariaLabel='Kontaktieren Sie uns'
         /> 
-      <div className=''>
+       <div className=''>
         <Services
         title={homeData.services.title}
         subtitle={homeData.services.subtitle}
         cards={homeData.services.cards}
-        />
-        <About
+        /> 
+       <About
         text={homeData.about.text}
         image={homeData.about.Image.asset.url}
         button={homeData.about.button}
         ariaLabel={homeData.about.button}
         />
-        <Feedback
+         <Feedback
         title={homeData.feedback.title} 
         subtitle={homeData.feedback.subtitle}
         cards={homeData.feedback.fbCards}
@@ -41,16 +46,27 @@ export default function Hero({ homeData }) {
         <News
         title={homeData.news.title}
         subtitle={homeData.news.subtitle}
-        newsData={homeData.news.newsCards}
+        posts={homeData.news.posts}
         />
-        <CallToAction
-        title={homeData.callToAction[0].title}
-        subtitle={homeData.callToAction[0].subtitle}
-        btnLabel={homeData.callToAction[0].button}
-        ariaLabel={homeData.callToAction[0].button} 
-        href={homeData.callToAction[0].link ? homeData.callToAction[0].link : '/kontakt'}
-        /> 
-      </div> 
+        {callToAction && (
+          <CallToAction
+            title={callToAction.title}
+            subtitle={callToAction.subtitle}
+            btnLabel={callToAction.button}
+            ariaLabel={callToAction.button}
+            href={callToAction.link || '/kontakt'}
+          />
+        )}
+        {/*{callToAction && callToAction.length > 0 && (
+          <CallToAction
+            title={callToAction[0]?.title || ''}
+            subtitle={callToAction[0]?.subtitle || ''}
+            btnLabel={callToAction[0]?.button || ''}
+            ariaLabel={callToAction[0]?.button || ''}
+            href={callToAction[0]?.link || '/kontakt'}
+          />
+        )} */}
+      </div>  
     </section>
   );
 }
