@@ -6,7 +6,6 @@ import styles from './styles.module.scss';
 import Image from 'next/image';
 import Cover from '@/components/Cover/Cover';
 import { format } from "date-fns";
-import Block from '@/components/blockContent/Block';
 
 export default function Post({ post, className }) {
   const router = useRouter();
@@ -56,13 +55,15 @@ export default function Post({ post, className }) {
 }
 
 export async function getStaticPaths() {
-  const query = `*[_type == "post"]`;
+  const query = `*[_type == "post"]{slug}`;
   const posts = await client.fetch(query);
-  const paths = posts.map(post => ({
+  const paths = posts
+  .filter(post => post.slug && post.slug.current) 
+  .map(post => ({
     params: { slug: post.slug.current }
   }));
 
-  console.log('Paths:', paths);
+console.log('Paths:', paths);
 
   return { paths, fallback: false };
 }
@@ -79,8 +80,8 @@ export async function getStaticProps({ params }) {
           url
         }
       },
+      slug,
       body {
-        slug,
         _id,
         date,
         timeToRead,
