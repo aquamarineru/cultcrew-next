@@ -1,154 +1,76 @@
-.text {
-    &Normal {
-      font-weight: normal;
-      line-height: 1.3;
-    }
-    &H2 {
-        font-size: 2em;
-        font-weight: bold;
-        margin: 1em 0;
-    }
-    &H3{
-        font-size: 1.5em;
-        font-weight: bold;
-        margin: 1em 0;
-    }
-    &Strong {
-      font-weight: bold;
-    }
-    &Quote {
-        font-style: italic;
-        padding-left: 1em;
-        border-left: 3px solid #ccc;
-        margin: 1em 0;
-      }
-    
-      &Link {
-        color: blue;
-        text-decoration: underline;
-    
-        &:hover {
-          color: darkblue;
-        }
-      }
-      &Number {
-        list-style: decimal;
-      }
-      &Bullet  {
-        list-style-type: none;
-        &Item {
-            display: flex;
-            gap: 1em;
-            align-items: center;
-            margin: 1em 0;
-            list-style-type: none;
-        }
-      }
-  }
-
-  .services {
+.services {
+    padding: 1em 0;
     &Card{
         background-color: #EEF6FF;
-
         padding: 1.5em  1em;
-
         margin: 2.5em 1em;
-
         border-radius: 20px;
-
+        display: flex;
+        flex-direction: column;
         @media screen and (min-width: 768px) {
-
             padding: 2.5em 1.5em;
-
             margin-top: 50px;
-
             margin: 1.5em 1.5em;
-
         }
-
         @media screen and (min-width: 1000px) {
-
             padding: 3em 2em;
-
             margin: 4em 2em;
-
         }
-
     }
-
     &Title{
-
         color: #333;
-
         font-family: 'Murecho', sans-serif;
-
         text-align: center;
-
         font-size: 1em;
-
         font-weight: 700;
-
         padding: 1em 0;
-
-
-
-
         @media screen and (min-width: 768px) {
-
             font-size: 1.5em;
-
             font-weight: 700;
-
         }
-
     }
-
-    &Text{
-
-        color: #333;
-
-        text-align: left;
-
-        margin-top: 20px;
-
-        font-size: .8em;
-
-        font-family: 'Murecho', sans-serif;
-
+    &Block{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap:    1em;
+        padding: 1em 0;
         @media screen and (min-width: 768px) {
-
-            font-size: 1em;
-
-            font-weight: 400;
-
+            grid-template-columns: 1fr 1fr;
+            padding: 1em 0;
         }
-
-        &Strong{
-
-            font-weight: 700;
-
-        }
-
-        &Underline{
-
-            text-decoration: underline;
-
-        }
-
-        &Bullet{
-
-            list-style-type: disc;
-
-            margin-left: 20px;
-
-        }
-
-        &Italic {
-
-            font-style: italic;
-
-        }
-
     }
+    &Button{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        font-size: 1em;
+        cursor: pointer;
+        margin-top: 1em;
+        transition: all 0.3s ease;
+        &Icon{
+          transition: transform 0.3s ease;
+        }
+        &:hover, &Icon{ 
+            transform: translateX(10px);
+        }
+      }
+
+}
+.post {
+    padding: 1.5em 1em;
+    margin: 0 auto;
+    @media screen and (min-width: 768px) {
+        padding: 2.5em 1.5em;
+        margin-top: 50px;
+        margin: 1.5em 1.5em;
+    }
+
+    @media screen and (min-width: 1000px) {
+        padding: 3em 2em;
+        margin: 4em 2em;
+    }
+
 
 }

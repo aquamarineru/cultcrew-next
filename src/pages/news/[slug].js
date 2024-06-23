@@ -6,8 +6,12 @@ import styles from './styles.module.scss';
 import Image from 'next/image';
 import Cover from '@/components/Cover/Cover';
 import { format } from "date-fns";
+import Contact from '@/components/Contact/Contact';
+import CallToAction from '@/components/CTA/CallToAction';
+import Card from '@/components/Card/Card';
 
-export default function Post({ post, className }) {
+export default function Post({ post, className, contactData}) {
+  console.log(post);
   const router = useRouter();
   if (router.isFallback) {
     return <div>Loading...</div>;
@@ -49,7 +53,25 @@ export default function Post({ post, className }) {
               ))
             )}
           </div>
+          
       </div>
+      
+      <CallToAction
+        title={post.body.callToAction[0].title}
+        subtitle={post.body.callToAction[0].subtitle}
+        btnLabel={post.body.callToAction[0].button}
+        ariaLabel={post.body.callToAction[0].button}
+        href={post.body.callToAction[0].link ? post.body.callToAction[0].link : '/kontakt'}
+      />
+      <Contact
+            title={contactData.title || ''}
+            subtitle={contactData.subtitle || ''}
+            image={contactData.image?.asset?.url || ''}
+            logo={contactData.contactDetails?.logo || ''}
+            address={contactData.contactDetails?.address || ''}
+            phone={contactData.contactDetails?.additionalPhone || ''}
+            email={contactData.contactDetails?.additionalEmail || ''}
+          />
     </div>
   );
 }
@@ -97,13 +119,40 @@ export async function getStaticProps({ params }) {
             _key,
             text
           }
+        },
+        callToAction[]{
+          _id,
+          title,
+          subtitle,
+          button,
+          link
+        },
+      }
+    }`;
+    const contactQuery = `*[ _type == "contact" ]{
+      _id,
+      title,
+      subtitle,
+      image{
+        asset->{
+          _id,
+          url
         }
+      },
+      contactDetails{
+        _id,
+        logo,
+        address,
+        additionalPhone,
+        additionalEmail
       }
     }`;
 
     console.log('Fetching post with slug:', params.slug);
 
     const post = await client.fetch(query, { slug: params.slug });
+    const contactData = await client.fetch(contactQuery);
+
     
     console.log('Fetched post:', post);
 
@@ -115,6 +164,7 @@ export async function getStaticProps({ params }) {
     return {
       props: {
         post,
+        contactData: contactData[0],
       },
     };
   } catch (error) {
