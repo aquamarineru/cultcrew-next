@@ -3,7 +3,7 @@ import styles from './styles.module.scss'
 import cl from 'classnames'
 import Link from 'next/link'
 import Block from '@/components/blockContent/Block'
-import { IoArrowForwardCircle } from 'react-icons/io5'
+import Button from '@/components/Button/Button'
 
 export default function ServicesCard({ className, title, text, slug}) {
 
@@ -14,9 +14,13 @@ export default function ServicesCard({ className, title, text, slug}) {
                 <h3 className={cl(className, styles.servicesTitle)}>{title}</h3>
                 <Block blocks={text} className={cl(className, styles.servicesBlock)} />
                 <div className={cl(className, styles.servicesButton)}>
-                  Mehr 
-                  <IoArrowForwardCircle className={styles.servicesButtonIcon} />
+                  <Button 
+                  aria-label="Mehr erfahren"
+                  btnLabel="Mehr erfahren"
+                  type="button"
+                  />
                 </div>
+                
             </div>
     </Link>
     </div>

@@ -44,17 +44,8 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        border-radius: 5px;
-        font-size: 1em;
         cursor: pointer;
         margin-top: 1em;
-        transition: all 0.3s ease;
-        &Icon{
-          transition: transform 0.3s ease;
-        }
-        &:hover, &Icon{ 
-            transform: translateX(10px);
-        }
       }
 
 }

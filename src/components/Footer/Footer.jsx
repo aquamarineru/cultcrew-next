@@ -4,7 +4,7 @@ import cl from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import Navigation from '../Header/Navbar'
+
 
 
 export default function Footer({className}) {
@@ -33,45 +33,45 @@ export default function Footer({className}) {
           </div>
         </div>
         <div className={styles.footerLinks}>
-          <ul>
-          <li className={styles.footerLinksItem}>
+          <ul className={styles.footerLinksItems}>
+          <li className={styles.footerLinksItemsItem}>
               <Link href="/">Startseite</Link>
             </li>
-            <li className={styles.footerLinksItem}>
+            <li className={styles.footerLinksItemsItem}>
               <Link href="/services">Services</Link>
             </li>
-            <li className={styles.footerLinksItem}>
+            <li className={styles.footerLinksItemsItem}>
               <Link href="/unternehmen">Unternehmen</Link>
             </li>
-            <li className={styles.footerLinksItem}>
+            <li className={styles.footerLinksItemsItem}>
               <Link href="/news">News</Link>
             </li>
-            <li className={styles.footerLinksItem}>
+            <li className={styles.footerLinksItemsItem}>
               <Link href="/jobs">Karierre</Link>
             </li>
-            <li className={styles.footerLinksItem}>
+            <li className={styles.footerLinksItemsItem}>
               <Link href="/kontakt">Kontakt</Link>
             </li>
           </ul>
-          <ul>
-            <li className={styles.footerLinksItem}>
-              <Link href="/services">Impressum</Link>
+          <ul className={styles.footerLinksItems}>
+            <li className={styles.footerLinksItemsItem}>
+              <Link href="/impressum">Impressum</Link>
             </li>
-            <li className={styles.footerLinksItem}>
-              <Link href="/services">Datenschutz</Link>
+            <li className={styles.footerLinksItemsItem}>
+              <Link href="/datenschutz">Datenschutz</Link>
             </li>
-            <li className={styles.footerLinksItem}>
-              <Link href="/services">AGB</Link>
+            <li className={styles.footerLinksItemsItem}>
+              <Link href="/agb">AGB</Link>
             </li>
           </ul>
-          <ul>
-            <li className={styles.footerLinksItem}>
+          <ul className={styles.footerLinksItems}>
+            <li className={styles.footerLinksItemsItem}>
               <Link href="/">Facebook</Link>
             </li>
-            <li className={styles.footerLinksItem}>
+            <li className={styles.footerLinksItemsItem}>
               <Link href="/">Instagram</Link>
             </li>
-            <li className={styles.footerLinksItem}>
+            <li className={styles.footerLinksItemsItem}>
               <Link href="/">LinkedIn</Link>
             </li>
           </ul>
