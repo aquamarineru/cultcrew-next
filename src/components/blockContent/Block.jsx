@@ -38,11 +38,19 @@ const Block = ({ className, blocks }) => {
         if (href) {
           const isExternal = href.startsWith('http');
           return isExternal ? (
-            <a href={href} className={cl(className, styles.textLink)} target="_blank" rel="noopener noreferrer">
+            <a 
+            href={href} 
+            className={cl(className, styles.textLink)} 
+            target="_blank" 
+            rel="noopener noreferrer">
               {children}
             </a>
           ) : (
-            <Link href={href} className={cl(className, styles.textLink)}>
+            <Link 
+            href={href} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={cl(className, styles.textLink)}>
               {children}
             </Link>
           );

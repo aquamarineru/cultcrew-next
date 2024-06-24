@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { client } from "../../../lib/client";
 
 export async function loadPosts(start, end) {

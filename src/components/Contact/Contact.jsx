@@ -28,8 +28,8 @@ export default function Contact({className, title, subtitle, image, logo, addres
             <Image
                 src={urlFor(logo).url()}
                 alt="logo"
-                width={140}
-                height={70}
+                width={120}
+                height={60}
                 className={cl(className, styles.contactRightLogo)}
             />
             <div className={cl(className, styles.contactRightData)}>
@@ -45,11 +45,8 @@ export default function Contact({className, title, subtitle, image, logo, addres
                     <IoMail className={styles.contactRightDataIcon} />
                     {email}
                 </div>
-
             </div>
-            
         </div>
-      
     </div>
   )
 }

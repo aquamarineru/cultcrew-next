@@ -15,14 +15,14 @@ export default function Jobs({jobsData, className}) {
         image={jobsData.image.asset._ref}
       />
       <div className={cl(className, styles.jobs)}>
-                {jobsData.jobs.map((job, index) => (
-                    <Job
-                        key={index}
-                        title={job.title}
-                        description={job.description}  
-                    />
-                ))}
-        </div>
+      {jobsData.jobs.map((job, index) => (
+        <Job
+        key={index}
+        title={job.title}
+        description={job.description}  
+        />
+      ))}
+      </div>
       <CallToAction
         title={jobsData.callToAction[0].title}
         subtitle={jobsData.callToAction[0].subtitle}

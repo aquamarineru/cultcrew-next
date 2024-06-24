@@ -18,6 +18,7 @@ export default function Cover({ className, image, title, subtitle, btnLabel, hre
           layout="fill"
           priority={true}
           quality={80}
+          lazyLoad={true}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className={cl(styles.coverImage)}
         />
@@ -31,7 +32,7 @@ export default function Cover({ className, image, title, subtitle, btnLabel, hre
           {subtitle && Array.isArray(subtitle) && subtitle.length > 0 ? (
             <Block blocks={subtitle} />
           ) : (
-            <p>No subtitle available</p>
+            <p>Kein Titel verfügbar</p>
           )}
         </div>
         {

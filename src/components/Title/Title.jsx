@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '../Button/Button'
 import styles from './styles.module.scss'
 import cl from 'classnames'
 

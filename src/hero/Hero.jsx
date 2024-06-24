@@ -12,9 +12,8 @@ import News from './News';
 
 export default function Hero({ homeData }) {
   if (!homeData) {
-    return <div>No data available</div>;
+    return <div>Keine Daten verfügbar</div>;
   }
-  console.log(homeData) 
   const callToAction = homeData.callToAction && homeData.callToAction[0];
   return (
     <section className={cl(styles.section)}>
@@ -57,15 +56,6 @@ export default function Hero({ homeData }) {
             href={callToAction.link || '/kontakt'}
           />
         )}
-        {/*{callToAction && callToAction.length > 0 && (
-          <CallToAction
-            title={callToAction[0]?.title || ''}
-            subtitle={callToAction[0]?.subtitle || ''}
-            btnLabel={callToAction[0]?.button || ''}
-            ariaLabel={callToAction[0]?.button || ''}
-            href={callToAction[0]?.link || '/kontakt'}
-          />
-        )} */}
       </div>  
     </section>
   );

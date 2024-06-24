@@ -11,10 +11,6 @@ export default function Job({title, description, className}) {
   return (
     <div className={cl(className, styles.job)}>
       <Title type="medium">{title}</Title>
-      {/* <div className={cl(className, styles.jobContent)}>
-          <Block blocks={description} />
-        
-      </div> */}
       <Block
       blocks={description}
       className={cl(className, styles.jobContent)}

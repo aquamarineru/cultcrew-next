@@ -12,24 +12,22 @@ export default function Card({className, image, title, subtitle, link}) {
     <div className={cl(className, styles.card)} >
        <Link
         href={`/news/${encodeURIComponent(link)}`}>
-         <Image
-          src={urlFor(image).url()} 
-          width={250} 
-          height={150} 
-          alt={title}
-          className={styles.cardImage}
+        <Image
+        src={urlFor(image).url()} 
+        width={250} 
+        height={150} 
+        alt={title}
+        className={styles.cardImage}
         /> 
-      <div className={styles.cardContent}>
-        <h2 className={styles.cardTitle}>{title}</h2>
-        <Block blocks={subtitle} className={styles.cardText} />
-        <div className={cl(className, styles.cardButton)}>
-          Mehr 
-          <IoArrowForwardCircle className={styles.cardButtonIcon} />
+        <div className={styles.cardContent}>
+          <h2 className={styles.cardTitle}>{title}</h2>
+          <Block blocks={subtitle} className={styles.cardText} />
+          <div className={cl(className, styles.cardButton)}>
+            Mehr 
+            <IoArrowForwardCircle className={styles.cardButtonIcon} />
+          </div>
         </div>
-      </div>
-    </Link> 
-
+       </Link> 
     </div>
-    
   )
 }

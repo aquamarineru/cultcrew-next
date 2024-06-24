@@ -3,7 +3,6 @@ import styles from './styles.module.scss';
 import cl from 'classnames';
 import Title from '@/components/Title/Title';
 import { SwiperSlide } from 'swiper/react';
-import { urlFor } from '../../../lib/client';
 import Slider from '@/components/Slider/Slider';
 import QualificationCard from './QualificationCard';
 
@@ -22,9 +21,7 @@ export default function Qualification({ className, data, title}) {
             </SwiperSlide>
           ))} 
         </Slider>
-
       </div>
-      
     </div>
   )
 }

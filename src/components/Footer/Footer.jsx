@@ -20,15 +20,15 @@ export default function Footer({className}) {
           quality={80}
           />
           <div className={cl(className, styles.footerContact)}>
-            <p className={cl(className, styles.footerContactItem)}>2728 Hickory StreetSalt 
-              <br />  Lake City, UT 84104</p>
-            <p className={cl(className, styles.footerContactItem)}>
+            <p className={cl(className, styles.footerContactItems)}>Tittmoninger Str. 10 
+              <br /> 83410 Laufen Deutschland</p>
+            <p className={cl(className, styles.footerContactItems)}>
               <FaPhoneAlt />
-              <a href="tel:+1801-328-8778">801-328-8778</a>
+              <a className={cl(className, styles.footerContactItem)} href="tel:+498682953649">+ 49-8682-953 649</a>
             </p>
-            <p className={cl(className, styles.footerContactItem)}>
+            <p className={cl(className, styles.footerContactItems)}>
               <FaEnvelope />
-              <a href="mailto:info@test.com"> info@test.com </a>
+              <a className={cl(className, styles.footerContactItem)} href="mailto:office@cult-crew.com"> office@cult-crew.com</a>
             </p>
           </div>
         </div>
@@ -66,7 +66,11 @@ export default function Footer({className}) {
           </ul>
           <ul className={styles.footerLinksItems}>
             <li className={styles.footerLinksItemsItem}>
-              <Link href="/">Facebook</Link>
+              <Link 
+              href="https://www.facebook.com/cultcrew.sicherheit/"
+              target="_blank"
+              rel="noreferrer"
+              >Facebook</Link>
             </li>
             <li className={styles.footerLinksItemsItem}>
               <Link href="/">Instagram</Link>
