@@ -3,6 +3,8 @@ import styles from './styles.module.scss'
 import cl from 'classnames'
 import { client } from '../../../lib/client'
 import Contact from '@/components/Contact/Contact'
+import cookie from 'cookie';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function Kontakt({className, data}) {
   return (
@@ -56,6 +58,15 @@ export async function getStaticProps() {
       },
       revalidate: 60,
     }
+    const sessionToken = uuidv4();
+
+    // Set the secure, HttpOnly cookie
+    context.res.setHeader('Set-Cookie', cookie.serialize('sessionToken', sessionToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      maxAge: 60 * 60, // 1 hour
+      path: '/',
+    }));
   } catch (err) {
     console.error("Error fetching data:", err);
     return {

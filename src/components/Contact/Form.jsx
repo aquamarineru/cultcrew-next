@@ -1,13 +1,15 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './styles.module.scss';
 import cl from 'classnames';
 import Link from 'next/link';
 import Button from '@/components/Button/Button';
+import { useCookies } from 'react-cookie';
 
 export default function Form({ className }) {
     const [popup, setPopup] = useState(false);
     const [popupMessage, setPopupMessage] = useState('');
     const [isAgreed, setIsAgreed] = useState(false);
+    const [cookies, setCookie] = useCookies(['user']);
 
     function hidePopup() {
         setPopup(false);
@@ -22,7 +24,16 @@ export default function Form({ className }) {
             from_email: email.value,
             message: message.value,
           };
+          if (isAgreed) {
+            // Set user agreement cookie
+            setCookie('userAgreement', 'agreed', { path: '/', secure: true, httpOnly: false });
+      
+            // Simulate sending email
+            setPopup(true);
+            setTimeout(() => setPopup(false), 3000);
+          }
         }
+
 
     return (
         <div className={cl(className, styles.contactForm)}>
