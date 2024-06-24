@@ -6,7 +6,7 @@ import Block from '@/components/blockContent/Block'
 import Link from 'next/link'
 
 export default function Job({title, description, className}) {
-  console.log(description)
+
 
   return (
     <div className={cl(className, styles.job)}>

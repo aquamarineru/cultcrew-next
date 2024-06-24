@@ -24,7 +24,6 @@ export default function News({className, initialPosts, total}) {
       setLoading(false);
     }
   };
-console.log(posts)
   return (
     <div className={cl(className, styles.news)}>
       <div className={cl(className, styles.newsCards)}>
@@ -46,9 +45,6 @@ console.log(posts)
           )}
 
       </div>
-        
-
-      
     </div>
   )
 }

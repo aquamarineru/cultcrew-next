@@ -8,7 +8,6 @@ import ServicesCard from './ServicesCard'
 import CallToAction from '@/components/CTA/CallToAction'
 
 export default function Services({className, servicesData}) {
-  console.log(servicesData)
   return (
     <div>
      <Cover 

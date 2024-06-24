@@ -8,7 +8,7 @@ import { IoCheckmarkCircle } from "react-icons/io5";
 
 export default function CompanyHistory({ className, description = [], title }) {
     if (!description || !description.length) {
-        return <div>No history data available.</div>;
+        return <div>Keine Daten verfügbar.</div>;
     }
 
 

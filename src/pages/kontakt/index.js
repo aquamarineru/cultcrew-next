@@ -5,7 +5,6 @@ import { client } from '../../../lib/client'
 import Contact from '@/components/Contact/Contact'
 
 export default function Kontakt({className, data}) {
-  console.log(data)
   return (
     <div>
      <Contact 

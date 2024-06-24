@@ -9,7 +9,6 @@ import Block   from '@/components/blockContent/Block';
 
 export default function Education({ className, title, text, image }) {
 
-console.log(image)
     return (
         <div className={cl(className, styles.education, styles.container)}>
             <Title type="medium">{title}</Title>

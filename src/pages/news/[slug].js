@@ -8,13 +8,12 @@ import Cover from '@/components/Cover/Cover';
 import { format } from "date-fns";
 import Contact from '@/components/Contact/Contact';
 import CallToAction from '@/components/CTA/CallToAction';
-import Card from '@/components/Card/Card';
+
 
 export default function Post({ post, className, contactData}) {
-  console.log(post);
   const router = useRouter();
   if (router.isFallback) {
-    return <div>Loading...</div>;
+    return <div>Laden...</div>;
   }
   let date = 'Invalid date';
   if (post.body.date) {
@@ -24,7 +23,7 @@ export default function Post({ post, className, contactData}) {
       console.error('Date parsing error:', error);
     }
   }
-  console.log(post);
+
 
   return (
     <div className={cl(className, styles.post)}>
@@ -85,7 +84,7 @@ export async function getStaticPaths() {
     params: { slug: post.slug.current }
   }));
 
-console.log('Paths:', paths);
+//console.log('Paths:', paths);
 
   return { paths, fallback: false };
 }
@@ -148,13 +147,13 @@ export async function getStaticProps({ params }) {
       }
     }`;
 
-    console.log('Fetching post with slug:', params.slug);
+    //console.log('Fetching post with slug:', params.slug);
 
     const post = await client.fetch(query, { slug: params.slug });
     const contactData = await client.fetch(contactQuery);
 
     
-    console.log('Fetched post:', post);
+    //console.log('Fetched post:', post);
 
     if (!post) {
       return {

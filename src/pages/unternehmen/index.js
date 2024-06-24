@@ -12,7 +12,7 @@ import Contact from '@/components/Contact/Contact';
 
 export default function Unternehmen({ className, data, contactData }) {
   if (!data || !contactData) {
-    return <div>No data available</div>;
+    return <div>Keine Daten verfügbar.</div>;
   }
 
   return (

@@ -8,7 +8,6 @@ import cl from 'classnames';
 const murecho = Murecho({ subsets: ["latin"] });
 
 export default function Home({ homeData }) {
-  console.log(homeData);
   return (
     <main className={cl(styles.main, murecho.className)}>
       <Hero homeData={homeData}/>
