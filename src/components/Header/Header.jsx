@@ -10,6 +10,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
     <header className={cl(styles.header)}>
@@ -47,7 +48,7 @@ export default function Header() {
         <div 
           className={cl(styles.headerMenu, isOpen && styles.headerIsOpen)}
         >
-          <Navigation />
+          <Navigation closeMenu={closeMenu}  />
         </div>
       </div>
     </header>
