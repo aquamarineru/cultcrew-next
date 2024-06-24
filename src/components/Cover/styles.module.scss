@@ -75,4 +75,17 @@
       gap: 1rem;
 
     }
+    @media screen and (max-width: 768px) {
+        height: auto; 
+        
+        &Image {
+            height: 60vh; 
+        }
+    }
+
+    @media screen and (min-width: 768px) {
+        &Image {
+            height: 100vh; 
+        }
+    }
 }
