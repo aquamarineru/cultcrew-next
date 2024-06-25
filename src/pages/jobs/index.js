@@ -28,7 +28,7 @@ export default function Jobs({jobsData, className}) {
         subtitle={jobsData.callToAction[0].subtitle}
         btnLabel={jobsData.callToAction[0].button}
         ariaLabel={jobsData.callToAction[0].button}
-        href={jobsData.callToAction[0].link ? jobsData.callToAction[0].link : '/kontakt'}
+        href={jobsData.callToAction[0].external ? jobsData.callToAction[0].external : '/kontakt'}
       />
     </div>
   )
@@ -50,7 +50,7 @@ export async function getStaticProps() {
         title,
         subtitle,
         button,
-        link
+        external
       }
     }`;
     const jobsData = await client.fetch(jobsQuery);

@@ -1,11 +1,23 @@
 import React from 'react'
 import { client } from '../../../lib/client'
+import cl from 'classnames'
+import styles from './styles.module.scss'
+import Cover from '@/components/Cover/Cover'
+import Block from '@/components/blockContent/Block'
 
-export default function Datenschutz({data}) {
-  console.log(data)
+export default function Datenschutz({data, className}) {
+  console.log(data[0].Image?.asset?.url)
   return (
     <div>
-      test
+      <Cover 
+        title={data[0].title}
+        subtitle={data[0].subtitle}
+        image={data[0].Image.asset.url}
+      />
+      <div className={cl(className, styles.data)}>
+        <Block blocks={data[0].text} />
+      </div>
+
     </div>
   )
 }
@@ -15,6 +27,12 @@ export async function getStaticProps() {
       title,
       subtitle,
       text,
+      Image{
+        asset->{
+          _id,
+          url
+        }
+      },
     }`;
     const data = await client.fetch(query);
     if (!data) {

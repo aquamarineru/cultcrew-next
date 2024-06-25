@@ -18,7 +18,6 @@ export default function Cover({ className, image, title, subtitle, btnLabel, hre
           layout="fill"
           priority={true}
           quality={80}
-          lazyLoad={true}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           className={cl(styles.coverImage)}
         />

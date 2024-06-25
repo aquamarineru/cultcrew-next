@@ -84,7 +84,6 @@ export async function getStaticPaths() {
     params: { slug: post.slug.current }
   }));
 
-//console.log('Paths:', paths);
 
   return { paths, fallback: false };
 }
@@ -147,13 +146,11 @@ export async function getStaticProps({ params }) {
       }
     }`;
 
-    //console.log('Fetching post with slug:', params.slug);
 
     const post = await client.fetch(query, { slug: params.slug });
     const contactData = await client.fetch(contactQuery);
 
     
-    //console.log('Fetched post:', post);
 
     if (!post) {
       return {

@@ -47,10 +47,17 @@
   display: flex;
   flex-direction: column;
     &Body {
-        padding: 1em;
+      padding: 1.5em  1em;
+      margin: 2.5em 1em;
         @media screen and (min-width: 768px) {
           display: block;
+          padding: 2.5em 1.5em;
+          margin-top: 50px;
+          margin: 1.5em 1.5em;
         }
+        @media screen and (min-width: 1000px) {
+          padding: 3em 2em;
+      }
     
         &Img {
           width: 100%;
@@ -60,7 +67,8 @@
     
           @media screen and (min-width: 768px) {
             float: left;
-            width: 50%;
+            width: 40%;
+            height: auto;
             margin: 0 1.2em 1.2em 0;
           }
         }
