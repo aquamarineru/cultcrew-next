@@ -1,60 +1,78 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './styles.module.scss';
 import cl from 'classnames';
+import emailjs from 'emailjs-com';
 import Link from 'next/link';
 import Button from '@/components/Button/Button';
 
 export default function Form({ className }) {
   const [popup, setPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState(null);
   const [isAgreed, setIsAgreed] = useState(false);
+  const [formData, setFormData] = useState({
+    Vorname: '',
+    Nachname: '',
+    from_email: '',
+    phone: '',
+    message: ''
+  });
+
   const form = useRef();
 
-/*   const sendEmail = async (e) => {
-    e.preventDefault();
-    const formData = new FormData(form.current);
-    const data = Object.fromEntries(formData.entries());
+  useEffect(() => {
+    emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_USER_ID);
+  }, []);
 
-    const response = await fetch('/api/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    });
-
-    const result = await response.json();
-
-    if (response.ok) {
-      setPopupMessage('Email sent successfully!');
-    } else {
-      setPopupMessage(`Error: ${result.message}`);
-    }
-    setPopup(true);
-  }; */
-
-  const sendEmail = () => {
-    setLoading(true)
-    fetch('/api/emails',{
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      /* body: JSON.stringify({
-        name: form.current[0].value,
-        surname: form.current[1].value,
-        email: form.current[2].value,
-        phone: form.current[3].value,
-        message: form.current[4].value,
-      }), */
-    })
-    .then(response => response.json())
-    .then(data => setResult(data))
-    .catch(error => setResult(error))
-    .finally(() => setLoading(false))
+  function hidePopup() {
+    setPopup(false);
   }
+
+  function handleInputChange(e) {
+    const { name, value } = e.target;
+    setFormData(prevState => ({ ...prevState, [name]: value }));
+  }
+
+  function isFormValid() {
+    return (
+      formData.Vorname &&
+      formData.Nachname &&
+      formData.from_email &&
+      formData.phone &&
+      formData.message &&
+      isAgreed
+    );
+  }
+
+  function sendEmail(e) {
+    e.preventDefault();
+    
+    emailjs.sendForm(
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+      form.current,
+      process.env.NEXT_PUBLIC_EMAILJS_USER_ID
+    ).then(
+      (result) => {
+        setPopupMessage('Nachricht erfolgreich gesendet!');
+        setPopup(true);
+        form.current.reset();
+        setFormData({
+          Vorname: '',
+          Nachname: '',
+          from_email: '',
+          phone: '',
+          message: ''
+        });
+        setIsAgreed(false);
+      },
+      (error) => {
+        setPopupMessage('Es ist ein Fehler aufgetreten. Bitte, versuchen Sie es erneut.');
+        setPopup(true);
+        console.log(error.text);
+      }
+    );
+  }
+
   return (
     <div className={cl(className, styles.contactForm)}>
       <form ref={form} onSubmit={sendEmail} className={styles.contactFormFields}>
@@ -65,6 +83,8 @@ export default function Form({ className }) {
             name="Vorname"
             placeholder="Ihr Vorname"
             required
+            value={formData.Vorname}
+            onChange={handleInputChange}
             className={cl(className, styles.contactFormFieldsInput)}
           />
         </div>
@@ -75,6 +95,8 @@ export default function Form({ className }) {
             name="Nachname"
             placeholder="Ihr Nachname"
             required
+            value={formData.Nachname}
+            onChange={handleInputChange}
             className={cl(className, styles.contactFormFieldsInput)}
           />
         </div>
@@ -82,9 +104,11 @@ export default function Form({ className }) {
           <label>E-mail*</label>
           <input
             type="email"
-            name="email"
+            name="from_email"
             placeholder="Ihre E-mail-Adresse"
             required
+            value={formData.from_email}
+            onChange={handleInputChange}
             className={cl(className, styles.contactFormFieldsInput)}
           />
         </div>
@@ -95,6 +119,8 @@ export default function Form({ className }) {
             name="phone"
             placeholder="Ihre Telefonnummer"
             required
+            value={formData.phone}
+            onChange={handleInputChange}
             className={cl(className, styles.contactFormFieldsInput)}
           />
         </div>
@@ -104,6 +130,8 @@ export default function Form({ className }) {
             name="message"
             placeholder="Ihre Nachricht"
             required
+            value={formData.message}
+            onChange={handleInputChange}
             className={cl(className, styles.contactFormFieldsInput)}
           ></textarea>
           <div className={cl(className, styles.contactFormAgree)}>
@@ -112,6 +140,7 @@ export default function Form({ className }) {
               id="agree"
               name="agree"
               checked={isAgreed}
+              required  
               onChange={() => setIsAgreed(!isAgreed)}
               className={cl(className, styles.contactFormAgreeCheckbox)}
             />
@@ -124,16 +153,24 @@ export default function Form({ className }) {
           </div>
         </div>
         <Button 
-        onClick={sendEmail}
-        aria-label="Submit form" 
-        btnLabel="Senden" 
-        type="submit" 
-        disabled={!isAgreed} />
+          aria-label="Submit form" 
+          btnLabel="Senden" 
+          type="submit" 
+          disabled={!isFormValid()} 
+        />
       </form>
       {popup && (
-        <div className={styles.popup}>
-          <p>{popupMessage}</p>
-          <button onClick={() => setPopup(false)}>Close</button>
+        <div className={cl(className, styles.popup)}>
+          <div className={cl(className, styles.popupContent)}>
+            <p className={cl(className, styles.popupMessage)}>{popupMessage}</p>
+            <button 
+              onClick={hidePopup}
+              aria-label="Close popup"
+              btnLabel="Schließen"
+              role="button"
+              className={cl(className, styles.popupClose)}
+              >Schließen</button>
+          </div>
         </div>
       )}
     </div>
