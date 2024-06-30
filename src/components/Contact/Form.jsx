@@ -7,10 +7,12 @@ import Button from '@/components/Button/Button';
 export default function Form({ className }) {
   const [popup, setPopup] = useState(false);
   const [popupMessage, setPopupMessage] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [result, setResult] = useState(null);
   const [isAgreed, setIsAgreed] = useState(false);
   const form = useRef();
 
-  const sendEmail = async (e) => {
+/*   const sendEmail = async (e) => {
     e.preventDefault();
     const formData = new FormData(form.current);
     const data = Object.fromEntries(formData.entries());
@@ -31,8 +33,28 @@ export default function Form({ className }) {
       setPopupMessage(`Error: ${result.message}`);
     }
     setPopup(true);
-  };
+  }; */
 
+  const sendEmail = () => {
+    setLoading(true)
+    fetch('/api/emails',{
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      /* body: JSON.stringify({
+        name: form.current[0].value,
+        surname: form.current[1].value,
+        email: form.current[2].value,
+        phone: form.current[3].value,
+        message: form.current[4].value,
+      }), */
+    })
+    .then(response => response.json())
+    .then(data => setResult(data))
+    .catch(error => setResult(error))
+    .finally(() => setLoading(false))
+  }
   return (
     <div className={cl(className, styles.contactForm)}>
       <form ref={form} onSubmit={sendEmail} className={styles.contactFormFields}>
@@ -101,7 +123,12 @@ export default function Form({ className }) {
             </Link>
           </div>
         </div>
-        <Button aria-label="Submit form" btnLabel="Senden" type="submit" disabled={!isAgreed} />
+        <Button 
+        onClick={sendEmail}
+        aria-label="Submit form" 
+        btnLabel="Senden" 
+        type="submit" 
+        disabled={!isAgreed} />
       </form>
       {popup && (
         <div className={styles.popup}>

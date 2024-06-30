@@ -1,0 +1,104 @@
+.cookies {
+    position: fixed;
+    position: fixed;
+    bottom: 50px;
+    right: 0;
+    max-width: 300px;
+    width: 100%;
+    background: #f4f5f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    padding: 15px 10px 22px 10px;
+    margin: 0 auto;
+    z-index: 10;
+    @media screen and (min-width: 768px) {
+        padding: 15px 20px 22px 20px;
+        max-width: 400px;
+        right: 50px;
+    }
+    &Header {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        color: #0056b3;
+        padding: 0 20px;
+        &Icon {
+            font-size: 32px;
+        }
+        &Title{
+            font-size: 16px;
+            color: #0056b3;
+            @media screen and (min-width: 768px){
+                font-size: 20px; 
+            }
+        }
+        
+    }
+    &Data{
+        margin-top: 14px;
+        font-size: 10px;
+        line-height: 1.2;
+        &Content {
+            padding: 0 20px;
+        }
+        &Link{
+            color: #0056b3;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+                color: #003f7f;
+            }
+        }
+        &Buttons{
+            margin-top: 16px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: space-between;
+            &Btn{
+                border: none;
+                color: #f0f2f5;
+                padding: 10px 0;
+                border-radius: 60px;
+                background: #0056b3;
+                cursor: pointer;
+                width: calc(100% / 2 - 10px);
+                transition: all 0.3s ease;
+                &:hover{
+                    background: #003f7f;
+                }
+
+            }
+            &Decline{
+                border: 1px solid #0056b3;
+                background-color: #EEF6FF;
+                color: #0056b3;
+                padding: 10px 0;
+                border-radius: 60px;
+                width: calc(100% / 2 - 10px);
+                transition: all 0.3s ease;
+                cursor: pointer;
+                &:hover{
+                    background: #0056b3;
+                    color: #f0f2f5;
+                }
+            }
+            @media screen and (min-width: 768px) {
+                flex-direction: row;
+                
+            }
+        }
+        @media screen and (min-width: 768px) {
+            font-size: 16px;
+            line-height: 1.2;
+        }
+
+    }
+   
+  }
+  
+  
+  

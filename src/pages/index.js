@@ -4,15 +4,19 @@ import { Murecho } from "next/font/google";
 import Hero from "../hero/Hero";
 import styles from '@/styles/home.module.scss';
 import cl from 'classnames';
+import CookiesPopup from "../components/Cookies/CookiesPopup";
 
 
 
 const murecho = Murecho({ subsets: ["latin"] });
 
 export default function Home({ homeData }) {
-
+  useEffect(() => {
+    console.log("Home component rendered");
+  }, []);
   return (
     <main className={cl(styles.main, murecho.className)}>
+      <CookiesPopup />
       <Hero homeData={homeData}/>
     </main>
   );
