@@ -41,13 +41,17 @@ export default function Cover({ className, image, title, subtitle, btnLabel, hre
             <p>Lesenzeit :  {timeToRead} </p>
           </div>
         }
-        {btnLabel && href && ariaLabel &&
-          <Button
-            href={href}
-            ariaLabel={ariaLabel}
-            btnLabel={btnLabel}
-          />
-        }
+        <div className={cl(className, styles.coverTitleBtn)}>
+          {btnLabel && href && ariaLabel &&
+            <Button
+              href={href}
+              ariaLabel={ariaLabel}
+              btnLabel={btnLabel}
+            />
+          }
+
+        </div>
+        
       </div>
     </div>
   );

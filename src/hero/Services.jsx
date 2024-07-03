@@ -8,6 +8,7 @@ import Slider from '../components/Slider/Slider';
 import Cards from '../components/Slider/Cards';
 import Button from '../components/Button/Button';
 import Block from '@/components/blockContent/Block';
+import Layout from '@/components/Layout/Layout';
 
 const Services = ({ className, title, subtitle, cards = [] }) => {
   return (

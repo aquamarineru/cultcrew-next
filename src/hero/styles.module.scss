@@ -9,8 +9,8 @@
         margin: 1.5em 1.5em;
     }
     @media screen and (min-width: 1000px) {
-        padding: 3em 2em;
-        margin: 4em 2em;
+        padding: 6em 3em;
+        margin: 6em 3em;
     }
     
     &Title{
@@ -163,11 +163,10 @@
     }
     &Card {
         display: flex;
-        gap: 1em;
+        gap: .3em;
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        margin-bottom: 2em;
         @media screen and (min-width: 768px) {
             flex-direction: row;
             gap: 2em;

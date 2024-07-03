@@ -15,7 +15,7 @@ export default function Contact({className, title, subtitle, image, logo, addres
             <h3 
             className={cl(className, styles.contactLeftTitle)}>{title}</h3>
             <p className={cl(className, styles.contactLeftText)}> {subtitle}</p>
-            <Form />
+{/*             <Form /> */}
         </div>
         <div className={cl(className, styles.contactRight)}>
             <Image 
@@ -28,8 +28,8 @@ export default function Contact({className, title, subtitle, image, logo, addres
             <Image
                 src={urlFor(logo).url()}
                 alt="logo"
-                width={120}
-                height={60}
+                width={100}
+                height={40}
                 className={cl(className, styles.contactRightLogo)}
             />
             <div className={cl(className, styles.contactRightData)}>

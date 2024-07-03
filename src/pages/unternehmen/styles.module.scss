@@ -34,6 +34,8 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
         @media (min-width: 700px) {
             flex-direction: row;
             align-items: start;
@@ -80,8 +82,6 @@
         max-width: 70%; 
         padding: 50px; 
     }
-
-
 }
 .team {
     &Member {
@@ -142,15 +142,14 @@
         align-items: center;
         @media (min-width: 700px) {
             flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1em;
+            gap: 1.5em;
             padding: 0 1em ;
         }
         @media screen and (min-width: 1000px) {
             gap: 2.5em;
             align-items: start;
             padding: 0 2em ;
+            
             
         }
     }
@@ -159,6 +158,8 @@
         max-width: 300px;
         height: auto;
         border-radius: 8px;
+        margin-top: 1.5em;
+
         @media (min-width: 700px) {
             max-width: 350px;
         }

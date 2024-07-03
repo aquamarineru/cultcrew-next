@@ -9,6 +9,7 @@ import Qualification from '@/components/Qualification/Qualification';
 import Education from './Education';
 import CallToAction from '@/components/CTA/CallToAction';
 import Contact from '@/components/Contact/Contact';
+import Layout from '@/components/Layout/Layout';
 
 export default function Unternehmen({ className, data, contactData }) {
   if (!data || !contactData) {
@@ -16,46 +17,47 @@ export default function Unternehmen({ className, data, contactData }) {
   }
 
   return (
-    <div className={cl(styles.unternehmen, className)}>
+    <div>
         <Cover 
         title={data.title} 
         subtitle={data.subtitle}
         image={data.image?.asset?.url || ''}
       />
-      <CompanyHistory description={data.aboutText || []} />
-      <Team
-        teamData={data.team || []}
-        title={data.teamTitle || ''}
-      />
-      {data.qualification.length > 0 && (
-        <Qualification 
-          data={data.qualification[0].qualificationCards || []}
-          title={data.qualification[0].title || ''}
+        <CompanyHistory description={data.aboutText || []} />
+        <Team
+          teamData={data.team || []}
+          title={data.teamTitle || ''}
         />
-      )}
-      <Education
-        title={data.education?.title || ''}
-        text={data.education?.text || ''}
-        image={data.education?.image?.asset?.url || ''}
-      />
-      {data.callToAction.length > 0 && (
-        <CallToAction
-          title={data.callToAction[0]?.title || ''}
-          subtitle={data.callToAction[0]?.subtitle || ''}
-          btnLabel={data.callToAction[0]?.button || ''}
-          ariaLabel={data.callToAction[0]?.button || ''} 
-          href={data.callToAction[0]?.link || '/jobs'}
+        {data.qualification.length > 0 && (
+          <Qualification 
+            data={data.qualification[0].qualificationCards || []}
+            title={data.qualification[0].title || ''}
+          />
+        )}
+        <Education
+          title={data.education?.title || ''}
+          text={data.education?.text || ''}
+          image={data.education?.image?.asset?.url || ''}
         />
-      )}
-      <Contact 
-        title={contactData.title || ''}
-        subtitle={contactData.subtitle || ''}
-        image={contactData.image?.asset?.url || ''}
-        logo={contactData.contactDetails?.logo || ''}
-        address={contactData.contactDetails?.address || ''}
-        phone={contactData.contactDetails?.additionalPhone || ''}
-        email={contactData.contactDetails?.additionalEmail || ''} 
-      />
+        {data.callToAction.length > 0 && (
+          <CallToAction
+            title={data.callToAction[0]?.title || ''}
+            subtitle={data.callToAction[0]?.subtitle || ''}
+            btnLabel={data.callToAction[0]?.button || ''}
+            ariaLabel={data.callToAction[0]?.button || ''} 
+            href={data.callToAction[0]?.link || '/jobs'}
+          />
+        )}
+        <Contact 
+          title={contactData.title || ''}
+          subtitle={contactData.subtitle || ''}
+          image={contactData.image?.asset?.url || ''}
+          logo={contactData.contactDetails?.logo || ''}
+          address={contactData.contactDetails?.address || ''}
+          phone={contactData.contactDetails?.additionalPhone || ''}
+          email={contactData.contactDetails?.additionalEmail || ''} 
+        />
+      
     </div>
   );
 }

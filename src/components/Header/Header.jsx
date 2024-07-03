@@ -27,7 +27,7 @@ export default function Header() {
         />
       </Link>
         {/* Hamburger/Close Icon */}
-        <div className='lg:hidden z-20'>
+        <div >
           <button onClick={toggleMenu} className={cl(styles.headerButton)}>
             <svg
               className="w-8 h-8"

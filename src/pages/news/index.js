@@ -4,7 +4,7 @@ import cl from 'classnames'
 import { loadPosts } from '../api/posts';
 import Card from '@/components/Card/Card';
 
-const LOAD_MORE = 3;
+const LOAD_MORE = 4;
 export default function News({className, initialPosts, total}) {
   const [posts, setPosts] = useState(initialPosts);
   const [loadedAmount, setLoadedAmount] = useState(LOAD_MORE);
@@ -51,7 +51,7 @@ export default function News({className, initialPosts, total}) {
 
 export async function getStaticProps() {
   try {
-    const { posts, total } = await loadPosts(0, 3); 
+    const { posts, total } = await loadPosts(0, 4); 
     return {
       props: {
         initialPosts: posts,
