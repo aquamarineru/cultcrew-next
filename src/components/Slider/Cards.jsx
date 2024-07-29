@@ -7,7 +7,7 @@ import Block from '@/components/blockContent/Block';
 
 export default function Cards({ image, title, description, slug, className }) {
   return (
-    <Link href={`/services/${encodeURIComponent(slug)}`} className={cl(className, styles.card)}>
+    <Link href={`/services/${encodeURIComponent(slug)}`} className={cl(className, styles.card)} passHref>
       <Image 
         src={image} 
         width={120} 

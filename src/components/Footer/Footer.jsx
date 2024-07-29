@@ -47,7 +47,7 @@ export default function Footer({className}) {
               <Link href="/news">News</Link>
             </li>
             <li className={styles.footerLinksItemsItem}>
-              <Link href="/jobs">Karierre</Link>
+              <Link href="/jobs">Karriere</Link>
             </li>
             <li className={styles.footerLinksItemsItem}>
               <Link href="/kontakt">Kontakt</Link>

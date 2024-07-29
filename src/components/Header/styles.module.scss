@@ -103,6 +103,10 @@
   justify-content: center;
   height: 100vh;
   margin-bottom: 5px;
+  @media screen and (min-width: 1000px) {
+    height: auto;
+    
+  }
 
   &Links {
     display: flex;

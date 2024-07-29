@@ -30,7 +30,7 @@ export default function Navigation({ closeMenu, className }) {
         onClick={closeMenu}
         passHref 
         className={cl(className, styles.navLink)}
-        >Karierre</Link>
+        >Karriere</Link>
         <Link 
         href="/news" 
         onClick={closeMenu}

@@ -9,20 +9,22 @@ export default function ServicesCard({ className, title, text, slug}) {
 
   return (
     <div>
-      <Link href={`/services/${encodeURIComponent(slug)}` } className={cl(className, styles.services)}>
+      <div className={cl(className, styles.services)}>
             <div  className={cl(className, styles.servicesCard)}>
                 <h3 className={cl(className, styles.servicesTitle)}>{title}</h3>
                 <Block blocks={text} className={cl(className, styles.servicesBlock)} />
                 <div className={cl(className, styles.servicesButton)}>
-                  <Button 
-                  aria-label="Mehr erfahren"
-                  btnLabel="Mehr erfahren"
-                  type="button"
-                  />
+                  <Link href={`/services/${encodeURIComponent(slug)}`} passHref>
+                    <Button 
+                    aria-label="Mehr erfahren"
+                    btnLabel="Mehr erfahren"
+                    type="button"
+                    />
+                  </Link>
                 </div>
                 
             </div>
-    </Link>
+    </div>
     </div>
   )
 }

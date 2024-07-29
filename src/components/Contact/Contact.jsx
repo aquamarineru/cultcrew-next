@@ -3,7 +3,6 @@ import styles from './styles.module.scss'
 import cl from 'classnames'
 import { urlFor } from '../../../lib/client'
 import Image from 'next/image'
-import Form from './Form'
 import { IoLocationSharp, IoMail, IoCallSharp  } from "react-icons/io5";
 
 
@@ -11,20 +10,19 @@ export default function Contact({className, title, subtitle, image, logo, addres
 
   return (
     <div className={cl(className, styles.contact)}>
-        <div className={cl(className, styles.contactLeft)}>
-            <h3 
-            className={cl(className, styles.contactLeftTitle)}>{title}</h3>
-            <p className={cl(className, styles.contactLeftText)}> {subtitle}</p>
-{/*             <Form /> */}
-        </div>
-        <div className={cl(className, styles.contactRight)}>
-            <Image 
-            src={urlFor(image).url()}
-            alt="contact"
-            width={350}
-            height={350}
-            className={cl(className, styles.contactRightImage)}
-            />
+       <div className={cl(className, styles.contactLeft)}>
+        <h3 className={cl(className, styles.contactLeftTitle)}>{title}</h3>
+        <p className={cl(className, styles.contactLeftText)}> {subtitle}</p>
+        <Image 
+                src={urlFor(image).url()}
+                alt="contact"
+                width={350}
+                height={350}
+                className={cl(className, styles.contactRightImage)}
+                property='image'
+        />
+      </div>
+            <div className={cl(className, styles.contactRight)}>
             <Image
                 src={urlFor(logo).url()}
                 alt="logo"

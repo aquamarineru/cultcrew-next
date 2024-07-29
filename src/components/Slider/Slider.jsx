@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+
 import { Pagination } from 'swiper/modules';
 import styles from './styles.module.scss';
 import cl from 'classnames';
@@ -80,7 +81,6 @@ export default function Slider({ children, className }) {
           1024: {
             slidesPerView: 3,
             spaceBetween: 50,
-            pagination: false,
           },
         }}
         onSwiper={(swiper) => {
