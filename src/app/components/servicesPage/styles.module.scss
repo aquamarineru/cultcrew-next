@@ -16,6 +16,7 @@
         justify-content: space-between;
         align-items: stretch;
         gap: 1em;
+        flex-wrap: wrap; 
         @media screen and (min-width: 768px) {
             padding: 2.5em 2.5em;
             margin: 1.5em 2.5em;

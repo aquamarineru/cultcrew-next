@@ -12,16 +12,21 @@ export default function Cover({ title, subtitle, className, btnLabel, image, ari
   return (
     <div className={cl(styles.cover, className)}>
       {image && image.asset?.url && (
-        <Image
-          src={urlFor(image).url()}
-          alt={title || 'Cover Image'}
-          layout="fill" 
-          quality={100}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority
-          className={styles.coverImage}
-        />
-      )}
+  <div className={styles.coverWrapper}>
+    <Image
+      src={urlFor(image).url()}
+      alt={title || 'Cover Image'}
+      quality={100}
+      layout='fill'
+      sizes="100vw"
+      objectFit="cover"
+      objectPosition="center"
+      priority
+      className={styles.coverWrapperImage}
+    />
+  </div>
+)}
+      
       <div className={cl(styles.coverCircleBlur)}></div>
       <div className={styles.coverContent}>
         {title && <h1 className={styles.coverContentTitle}>{title}</h1>}
