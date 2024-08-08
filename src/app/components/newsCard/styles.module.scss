@@ -127,3 +127,51 @@
     }
   }
 }
+.post {
+  display: flex;
+  flex-direction: column;
+    &Body {
+      padding: 1.5em  1em;
+      margin: 2.5em 1em;
+        @media screen and (min-width: 768px) {
+          display: block;
+          padding: 2.5em 1.5em;
+          margin-top: 50px;
+          margin: 1.5em 1.5em;
+        }
+        @media screen and (min-width: 1000px) {
+          padding: 3em 2em;
+      }
+    
+        &Img  {
+          width: auto;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 10px;
+         
+    
+          @media screen and (min-width: 768px) {
+            float: left;
+            width: 50%;
+            height: auto;
+            margin: 0 1.2em 1.2em 0;
+          }
+        }
+        &Img img{
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          object-position: center;
+          border-radius: 10px;
+        }
+    
+        &Text {
+            font-size: 1em;
+            line-height: 1.2em;
+          @media screen and (min-width: 768px) {
+            overflow: hidden;
+          }
+        }
+      }
+}
