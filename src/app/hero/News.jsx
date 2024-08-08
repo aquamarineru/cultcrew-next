@@ -23,7 +23,7 @@ export default function News({ className, title, subtitle, posts }) {
                 key={index}
                 title={item.title} 
                 subtitle={item.subtitle} 
-                link={item.slug.current} 
+                slug={`${item.slug.current}`}
                 image={item.image}
                 />
             ))}

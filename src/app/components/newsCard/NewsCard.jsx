@@ -8,7 +8,7 @@ import { urlFor } from '../../lib/client';
 import Block from '../block/Block';
 
 export default function NewsCard({ className, title, subtitle, slug, image }) {
-
+console.log(slug)
     return(
         <div className={cl(className, styles.card)}>
             <Link href={`/news/${encodeURIComponent(slug)}`} className={cl(className, styles.cardLink)}>
