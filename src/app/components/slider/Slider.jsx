@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { Swiper } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
+
 import 'swiper/swiper-bundle.css';
 
 import { Pagination } from 'swiper/modules';
