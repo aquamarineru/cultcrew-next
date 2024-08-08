@@ -1,5 +1,3 @@
-// src/app/api/posts/route.js
-
 import { NextResponse } from 'next/server';
 import { client } from '../../lib/client';
 

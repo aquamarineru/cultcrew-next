@@ -2,6 +2,7 @@ import React from 'react'
 import { PortableText } from '@portabletext/react';
 import styles from './styles.module.scss';
 import cl from 'classnames';
+import Image from 'next/legacy/image';
 
 const components = {
   block: {
