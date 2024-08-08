@@ -46,7 +46,7 @@ export default function Footer({className}) {
               <Link href="/news" className={styles.link}>News</Link>
             </li>
             <li className={styles.footerLinksItemsItem}>
-              <Link href="/karriere">Karriere</Link>
+              <Link href="/karriere" className={styles.link}>Karriere</Link>
             </li>
             <li className={styles.footerLinksItemsItem}>
               <Link href="/kontakt" className={styles.link}>Kontakt</Link>

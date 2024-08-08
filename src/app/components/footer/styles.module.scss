@@ -90,11 +90,12 @@
         }
     }
 } 
-.link{
+.link {
     color: #333;
     text-decoration: none;
     transition: all .3s;
-    &:hover{
+
+    &:hover {
         color: #007BFF;
     }
 }
