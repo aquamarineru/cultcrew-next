@@ -1,0 +1,25 @@
+.button {
+    background-color: #0056b3;
+    color: #fff;
+    padding: 16px 32px;
+    font-family: 'Murecho', sans-serif;
+    border-radius: 60px;
+    transition: background-color 0.3s ease-in-out;
+    display: inline-block;
+    text-align: center;
+    font-size: 1rem;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    cursor: pointer;
+    border: none;
+  
+    &:hover {
+      background-color: #003d80;
+    }
+  
+    @media screen and (min-width: 1024px) {
+      font-size: 1.2rem;
+    }
+  }
+  
