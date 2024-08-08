@@ -18,9 +18,6 @@ export default function Cover({ title, subtitle, className, btnLabel, image, ari
       alt={title || 'Cover Image'}
       quality={100}
       layout='fill'
-      sizes="100vw"
-      objectFit="cover"
-      objectPosition="center"
       priority
       className={styles.coverWrapperImage}
     />
