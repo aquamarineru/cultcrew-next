@@ -13,8 +13,8 @@
         margin: 1em;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
+        justify-content: space-between;
+        align-items: stretch;
         gap: 1em;
         @media screen and (min-width: 768px) {
             padding: 2.5em 2.5em;
