@@ -28,11 +28,18 @@
             font-size: 1.3em;
             font-weight: 600;
             padding: 1em 0;
+            text-align: center;
             @media screen and (min-width: 768px) {
                 font-size: 1.5em;
                 font-weight: 700;
             }
 
+        }
+        &Text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
     }
     &Slug{

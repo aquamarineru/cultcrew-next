@@ -1,5 +1,6 @@
 import React from 'react';
 import { client } from './lib/client';
+import Head from 'next/head';
 import Hero from './hero/Hero';
 import CookiesPopup from '../app/components/cookies/CookiesPopup';
 
@@ -7,7 +8,8 @@ export const revalidate = 60;
 
 export default async function Home() {
   const homeData = await getHomeData();
-
+  const seoData = await getSeoData();
+  console.log('seoData', seoData);
 
   if (!homeData) {
     return <div>Error: No data available</div>;
@@ -21,7 +23,6 @@ export default async function Home() {
   );
 }
 
-// Function to fetch data from Sanity
 async function getHomeData() {
   const query = `*[ _type == "home" ]{
     _id,
@@ -103,6 +104,32 @@ async function getHomeData() {
     return data[0] || null; 
   } catch (err) {
     console.error("Error fetching data:", err);
+    return null;
+  }
+}
+
+async function getSeoData() {
+  const query = `*[_type == "seo"]{
+    pageTitle,
+    metaDescription,
+    canonicalUrl,
+    robotsDirective,
+    ogTitle,
+    ogDescription,
+    ogImage {
+      asset->{
+        url
+      },
+      alt
+    },
+    ogType
+  }`;
+
+  try {
+    const seoData = await client.fetch(query);
+    return seoData[0] || null; 
+  } catch (err) {
+    console.error("Error fetching SEO data:", err);
     return null;
   }
 }

@@ -40,14 +40,18 @@ export default function Contact({ className, title, subtitle, image, logo, addre
                     <IoLocationSharp size={30} />
                     {address} 
                     </div>
-                <div className={cl(className, styles.contactRightDataText)}>
+                <a
+                  href={`tel:${phone}`}
+                 className={cl(className, styles.contactRightDataText)}>
                     <IoCallSharp />
                     {phone}
-                    </div>
-                <div className={cl(className, styles.contactRightDataText)}>
+                    </a>
+                <a
+                href={`mailto:${email}`}
+                 className={cl(className, styles.contactRightDataText)}>
                     <IoMail />
                     {email}
-                </div>
+                </a>
             </div>
         </div>
     </div>

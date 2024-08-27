@@ -156,11 +156,13 @@
     align-items: center;
     padding: 0 1em;
     margin-bottom: 1em;
+    justify-content: center;
     &Content {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
+        gap: 1em;
         @media (min-width: 700px) {
             flex-direction: row;
             gap: 1.5em;
@@ -171,13 +173,15 @@
             gap: 2.5em;
             align-items: flex-start;
             padding: 0 2em ;
-            
-            
+
         }
     }
     &Wrapper{
         width: 100%; 
         height: auto; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
     &Image {
         width: auto;
         height: 100%;

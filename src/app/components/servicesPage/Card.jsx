@@ -10,7 +10,9 @@ export default function Card({ title, text, slug, className }) {
     return(
         <div className={cl(className, styles.servicesCard)}>
             <h3 className={cl(className, styles.servicesCardTitle)}>{title} </h3>
-            <Block value={text} />
+            <div className={cl(className, styles.servicesCardText)}> 
+                <Block value={text} />
+            </div>
             <Link href={`/services/${encodeURIComponent(slug)}`} 
             passHref
             >

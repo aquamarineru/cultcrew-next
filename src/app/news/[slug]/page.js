@@ -1,4 +1,3 @@
-// app/news/[slug]/page.js
 import React from 'react';
 import { client } from '../../lib/client';
 import NewsSlug from 'app/components/newsCard/NewsSlug';
