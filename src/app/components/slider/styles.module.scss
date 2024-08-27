@@ -54,6 +54,10 @@
         display: block;
         margin: 0 auto;
     } 
+    &Icon img{
+        width: 100%;
+        height: auto;
+    }
     &Title{
         color: #fff;
         font-family: "Murecho", sans-serif;
