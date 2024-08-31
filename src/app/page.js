@@ -9,7 +9,7 @@ export const revalidate = 60;
 export default async function Home() {
   const homeData = await getHomeData();
   const seoData = await getSeoData();
-  console.log('seoData', seoData);
+
 
   if (!homeData) {
     return <div>Error: No data available</div>;

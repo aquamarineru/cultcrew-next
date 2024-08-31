@@ -3,7 +3,6 @@ import { client } from '../lib/client';
 import ServicesPage from '../components/servicesPage/ServicesPage';
 
 export default async function Services() {
-    // Define your query
     const query = `*[_type == "servicesPage"]{
         title,
         subtitle,
