@@ -2,6 +2,7 @@ import React from 'react';
 import { client } from '../lib/client';
 import ServicesPage from '../components/servicesPage/ServicesPage';
 
+export const revalidate = 60;
 export default async function Services() {
     const query = `*[_type == "servicesPage"]{
         title,

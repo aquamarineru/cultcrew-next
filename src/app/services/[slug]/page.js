@@ -2,6 +2,7 @@ import React from 'react';
 import { client } from '../../lib/client';
 import ServiceSlug from '../../components/servicesPage/ServiceSlug';
 
+export const revalidate = 60;
 export default async function ServiceSlugPage( { params}) {
     const { slug } = params;
     const serviceQuery = `*[_type == "servicesCards" && slug.current == $slug][0]{

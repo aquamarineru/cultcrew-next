@@ -2,6 +2,7 @@ import React from 'react'
 import { client } from '../lib/client';
 import Karriere from '../components/karriere/Karriere';
 
+export const revalidate = 60;
 export default async function KarrierePage() {
     const query = ` *[_type == "jobs"]{
       title,

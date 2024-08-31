@@ -2,7 +2,7 @@
 import React from 'react';
 import { client } from '../lib/client';
 import DatenschutzPage from '../components/datenschutz/DatenschutzPage';
-
+export const revalidate = 60;
 export default async function Datenschutz() {
   const query = `*[ _type == "datenschutz" ]{
     title,

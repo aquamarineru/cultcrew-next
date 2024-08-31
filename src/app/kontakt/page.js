@@ -2,6 +2,7 @@ import React from 'react'
 import { client } from '../lib/client';
 import Contact from '../components/contact/Contact';
 
+export const revalidate = 60;
 export default async function Kontakt() {
     const query = `*[_type == "contact"]{
     title,
