@@ -1,6 +1,5 @@
 import React from 'react';
 import { client } from './lib/client';
-import Head from 'next/head';
 import Hero from './hero/Hero';
 import CookiesPopup from '../app/components/cookies/CookiesPopup';
 
